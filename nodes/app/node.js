@@ -1,1 +1,1 @@
-output = { app: express.express() }
+output = { app: express() }

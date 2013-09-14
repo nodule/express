@@ -4,13 +4,13 @@
   "ports": {
     "input": {
       "app": {
-        "type": "object"
+        "type": "function"
       },
       "port": {
         "type": "string"
       },
       "dummy": {
-        "type": "string"
+        "type": "null"
       }
     },
     "output": {

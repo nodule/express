@@ -12,7 +12,10 @@
     },
     "output": {
       "app": {
-        "type": "object"
+        "type": "function"
+      },
+      "dummy": {
+        "type": "null"
       }
     }
   }

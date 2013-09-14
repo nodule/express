@@ -4,7 +4,7 @@
   "ports": {
     "input": {
       "app": {
-        "type": "object"
+        "type": "function"
       },
       "path": {
         "type": "string"

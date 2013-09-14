@@ -3,8 +3,14 @@
   "description": "express send",
   "ports": {
     "input": {
-      "body": {
+      "req": {
         "type": "object"
+      },
+      "res": {
+        "type": "object"
+      },
+      "next": {
+        "type": "function"
       }
     },
     "output": {
