@@ -2,6 +2,11 @@
   "express.app": {
     "fn": "output = { app: express.express() }\n",
     "ports": {
+      "input": {
+        "dummy": {
+          "type": "null"
+        }
+      },
       "output": {
         "app": {
           "type": "object"

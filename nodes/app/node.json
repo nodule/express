@@ -5,6 +5,11 @@
     "express": "latest"
   },
   "ports": {
+    "input": {
+      "dummy": {
+        "type": "null"
+      }
+    },
     "output": {
       "app": {
         "type": "object"
