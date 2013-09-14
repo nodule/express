@@ -7,7 +7,6 @@
     { "name": "express.send" },
     { "name": "express.listen", "context": { "port": "2376" } }
   ],
-  // determine what to use for the success port
   "links": [
     { "source": 0, "target": 1, "out": "app", "in": "app" },
     { "source": 1, "target": 2, "out": "req", "in": "req" },
