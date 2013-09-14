@@ -1,0 +1,17 @@
+{
+  "name": "express.get",
+  "description": "ExpressJS get",
+  "nodes": [
+    { "name": "express.app" },
+    { "name": "express.get", "context": { "path": "/" } },
+    { "name": "express.send" },
+    { "name": "express.listen", "context": { "port": "2376" } }
+  ],
+  // determine what to use for the success port
+  "links": [
+    { "source": 0, "target": 1, "out": "app", "in": "app" },
+    { "source": 1, "target": 2, "out": "req", "in": "req" },
+    { "source": 1, "target": 2, "out": "res", "in": "res" },
+    { "source": 1, "target": 2, "out": "next", "in": "next" }
+  ]
+}

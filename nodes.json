@@ -15,15 +15,25 @@
     "name": "express.app"
   },
   "express.get": {
-    "fn": "output = [input.app, 'get', path]\n",
+    "fn": "output = [input.app, 'get', input.path]\n",
     "ports": {
       "input": {
         "app": {
           "type": "object"
+        },
+        "path": {
+          "type": "string",
+          "default": "/"
         }
       },
       "output": {
-        "output": {
+        "req": {
+          "type": "object"
+        },
+        "res": {
+          "type": "object"
+        },
+        "next": {
           "type": "object"
         }
       }
@@ -52,11 +62,14 @@
     "name": "express.listen"
   },
   "express.post": {
-    "fn": "output = [input.app, 'post', path]\n",
+    "fn": "output = [input.app, 'post', input.path]\n",
     "ports": {
       "input": {
         "app": {
           "type": "object"
+        },
+        "path": {
+          "type": "string"
         }
       },
       "output": {
@@ -67,5 +80,18 @@
     },
     "description": "express post",
     "name": "express.post"
+  },
+  "express.send": {
+    "fn": "\n//input.req\n//input.next\n\ninput.res.send(input.body)\n\n// todo: do something with the success port\n",
+    "ports": {
+      "input": {
+        "body": {
+          "type": "object"
+        }
+      },
+      "output": {}
+    },
+    "description": "express send",
+    "name": "express.send"
   }
 }

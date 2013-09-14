@@ -5,6 +5,9 @@
     "input": {
       "app": {
         "type": "object"
+      },
+      "path": {
+        "type": "string"
       }
     },
     "output": {

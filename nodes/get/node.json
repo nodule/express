@@ -5,10 +5,20 @@
     "input": {
       "app": {
         "type": "object"
+      },
+      "path": {
+        "type": "string",
+        "default": "/"
       }
     },
     "output": {
-      "output": {
+      "req": {
+        "type": "object"
+      },
+      "res": {
+        "type": "object"
+      },
+      "next": {
         "type": "object"
       }
     }

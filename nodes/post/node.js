@@ -1,1 +1,1 @@
-output = [input.app, 'post', path]
+output = [input.app, 'post', input.path]
