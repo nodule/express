@@ -1,0 +1,16 @@
+{
+  "name": "express.get",
+  "description": "express get",
+  "ports": {
+    "input": {
+      "app": {
+        "type": "object"
+      }
+    },
+    "output": {
+      "output": {
+        "type": "object"
+      }
+    }
+  }
+}

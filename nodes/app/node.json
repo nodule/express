@@ -1,0 +1,14 @@
+{
+  "name": "express.app",
+  "description": "express app",
+  "require": {
+    "express": "latest"
+  },
+  "ports": {
+    "output": {
+      "app": {
+        "type": "object"
+      }
+    }
+  }
+}

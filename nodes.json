@@ -1,0 +1,71 @@
+{
+  "express.app": {
+    "fn": "output = { app: express.express() }\n",
+    "ports": {
+      "output": {
+        "app": {
+          "type": "object"
+        }
+      }
+    },
+    "require": {
+      "express": "latest"
+    },
+    "description": "express app",
+    "name": "express.app"
+  },
+  "express.get": {
+    "fn": "output = [input.app, 'get', path]\n",
+    "ports": {
+      "input": {
+        "app": {
+          "type": "object"
+        }
+      },
+      "output": {
+        "output": {
+          "type": "object"
+        }
+      }
+    },
+    "description": "express get",
+    "name": "express.get"
+  },
+  "express.listen": {
+    "fn": "output = { output: input.app.listen(input.port) }\n",
+    "ports": {
+      "input": {
+        "app": {
+          "type": "object"
+        },
+        "port": {
+          "type": "string"
+        }
+      },
+      "output": {
+        "output": {
+          "type": "object"
+        }
+      }
+    },
+    "description": "express listen",
+    "name": "express.listen"
+  },
+  "express.post": {
+    "fn": "output = [input.app, 'post', path]\n",
+    "ports": {
+      "input": {
+        "app": {
+          "type": "object"
+        }
+      },
+      "output": {
+        "output": {
+          "type": "object"
+        }
+      }
+    },
+    "description": "express post",
+    "name": "express.post"
+  }
+}

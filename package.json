@@ -1,0 +1,32 @@
+{
+  "name": "chix-express",
+  "description": "Express for Chiχ",
+  "author": "Rob Halff <rob.halff@gmail.com>",
+  "version": "0.0.1",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/chix/chix/raw/master/LICENSE"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chix/chix-express.git"
+  },
+  "engines": {
+    "node": ">=0.6.0"
+  },
+  "dependencies": {
+    "express": "latest"
+  },
+  "main": "main",
+  "chix": {
+    "nodes": [
+      "app",
+      "get",
+      "post",
+      "put",
+      "delete"
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "express.post",
+  "description": "express post",
+  "ports": {
+    "input": {
+      "app": {
+        "type": "object"
+      }
+    },
+    "output": {
+      "output": {
+        "type": "object"
+      }
+    }
+  }
+}

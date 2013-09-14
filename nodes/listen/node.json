@@ -1,0 +1,19 @@
+{
+  "name": "express.listen",
+  "description": "express listen",
+  "ports": {
+    "input": {
+      "app": {
+        "type": "object"
+      },
+      "port": {
+        "type": "string"
+      }
+    },
+    "output": {
+      "output": {
+        "type": "object"
+      }
+    }
+  }
+}
