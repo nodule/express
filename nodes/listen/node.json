@@ -8,6 +8,9 @@
       },
       "port": {
         "type": "string"
+      },
+      "dummy": {
+        "type": "string"
       }
     },
     "output": {

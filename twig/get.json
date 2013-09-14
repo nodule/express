@@ -11,6 +11,7 @@
     { "source": 0, "target": 1, "out": "app", "in": "app" },
     { "source": 1, "target": 2, "out": "req", "in": "req" },
     { "source": 1, "target": 2, "out": "res", "in": "res" },
-    { "source": 1, "target": 2, "out": "next", "in": "next" }
+    { "source": 1, "target": 2, "out": "next", "in": "next" },
+    { "source": 2, "target": 3, "out": "next", "in": "next" }
   ]
 }

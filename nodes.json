@@ -55,6 +55,9 @@
         },
         "port": {
           "type": "string"
+        },
+        "dummy": {
+          "type": "string"
         }
       },
       "output": {
@@ -94,7 +97,11 @@
           "type": "object"
         }
       },
-      "output": {}
+      "output": {
+        "dummy": {
+          "type": "null"
+        }
+      }
     },
     "description": "express send",
     "name": "express.send"
