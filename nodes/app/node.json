@@ -1,5 +1,5 @@
 {
-  "name": "express.app",
+  "name": "app",
   "description": "express app",
   "require": {
     "express": "latest"
