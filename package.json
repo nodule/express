@@ -19,14 +19,5 @@
   "dependencies": {
     "express": "latest"
   },
-  "main": "main",
-  "chix": {
-    "nodes": [
-      "app",
-      "get",
-      "post",
-      "put",
-      "delete"
-    ]
-  }
+  "main": "x"
 }
