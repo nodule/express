@@ -1,5 +1,5 @@
 {
-  "name": "chix-express",
+  "name": "express",
   "description": "Express for Chiχ",
   "version": "0.0.1",
   "licences": [
@@ -134,8 +134,8 @@
     }
   },
   "twigs": {
-    "chix-express": {
-      "name": "chix-express",
+    "express": {
+      "name": "express",
       "description": "ExpressJS get",
       "nodes": [
         {
