@@ -19,5 +19,8 @@
   "dependencies": {
     "express": "latest"
   },
-  "main": "x"
+  "main": "x",
+  "chix": {
+	"name": "express"
+  }
 }
