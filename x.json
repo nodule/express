@@ -134,8 +134,9 @@
     }
   },
   "twigs": {
-    "express": {
-      "name": "express",
+    "name": "express",
+    "get": {
+      "name": "get",
       "description": "ExpressJS get",
       "nodes": [
         {
