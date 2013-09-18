@@ -133,9 +133,8 @@
       "ns": "express"
     }
   ],
-  "twigs": {
-    "ns": "express",
-    "get": {
+  "twigs": [
+    {
       "name": "get",
       "description": "ExpressJS get",
       "nodes": [
@@ -199,7 +198,8 @@
           "out": "dummy",
           "in": "dummy"
         }
-      ]
+      ],
+      "ns": "express"
     }
-  }
+  ]
 }
