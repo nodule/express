@@ -139,19 +139,23 @@
       "description": "ExpressJS get",
       "nodes": [
         {
-          "name": "express.app"
+          "ns": "express",
+          "name": "app"
         },
         {
-          "name": "express.get",
+          "ns": "express",
+          "name": "get",
           "context": {
             "path": "/"
           }
         },
         {
-          "name": "express.send"
+          "ns": "express",
+          "name": "send"
         },
         {
-          "name": "express.listen",
+          "ns": "express",
+          "name": "listen",
           "context": {
             "port": "2376"
           }
