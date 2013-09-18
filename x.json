@@ -18,6 +18,7 @@
   "nodes": {
     "app": {
       "fn": "output = { app: express() }\n",
+      "ns": "express",
       "ports": {
         "input": {
           "dummy": {
@@ -41,6 +42,7 @@
     },
     "get": {
       "fn": "output = [input.app, 'get', input.path]\n",
+      "ns": "express",
       "ports": {
         "input": {
           "app": {
@@ -68,6 +70,7 @@
     },
     "listen": {
       "fn": "output = { output: input.app.listen(input.port) }\n",
+      "ns": "express",
       "ports": {
         "input": {
           "app": {
@@ -91,6 +94,7 @@
     },
     "post": {
       "fn": "output = [input.app, 'post', input.path]\n",
+      "ns": "express",
       "ports": {
         "input": {
           "app": {
@@ -111,6 +115,7 @@
     },
     "send": {
       "fn": "\n//input.req\n//input.next\n\ninput.res.send(input.res.body)\n\n// todo: do something with the success port\n",
+      "ns": "express",
       "ports": {
         "input": {
           "req": {
