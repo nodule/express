@@ -1,0 +1,200 @@
+{
+  "name": "chix-express",
+  "description": "Express for Chiχ",
+  "version": "0.0.1",
+  "licences": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/psichi/chix/raw/master/LICENSE"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/psichi/chix-express.git"
+  },
+  "dependencies": {
+    "express": "latest"
+  },
+  "nodes": {
+    "app": {
+      "fn": "output = { app: express() }\n",
+      "ports": {
+        "input": {
+          "dummy": {
+            "type": "null"
+          }
+        },
+        "output": {
+          "app": {
+            "type": "function"
+          },
+          "dummy": {
+            "type": "null"
+          }
+        }
+      },
+      "require": {
+        "express": "latest"
+      },
+      "description": "express app",
+      "name": "app"
+    },
+    "express.get": {
+      "fn": "output = [input.app, 'get', input.path]\n",
+      "ports": {
+        "input": {
+          "app": {
+            "type": "function"
+          },
+          "path": {
+            "type": "string",
+            "default": "/"
+          }
+        },
+        "output": {
+          "req": {
+            "type": "object"
+          },
+          "res": {
+            "type": "object"
+          },
+          "next": {
+            "type": "function"
+          }
+        }
+      },
+      "description": "express get",
+      "name": "express.get"
+    },
+    "express.listen": {
+      "fn": "output = { output: input.app.listen(input.port) }\n",
+      "ports": {
+        "input": {
+          "app": {
+            "type": "function"
+          },
+          "port": {
+            "type": "string"
+          },
+          "dummy": {
+            "type": "null"
+          }
+        },
+        "output": {
+          "output": {
+            "type": "object"
+          }
+        }
+      },
+      "description": "express listen",
+      "name": "express.listen"
+    },
+    "express.post": {
+      "fn": "output = [input.app, 'post', input.path]\n",
+      "ports": {
+        "input": {
+          "app": {
+            "type": "function"
+          },
+          "path": {
+            "type": "string"
+          }
+        },
+        "output": {
+          "output": {
+            "type": "object"
+          }
+        }
+      },
+      "description": "express post",
+      "name": "express.post"
+    },
+    "express.send": {
+      "fn": "\n//input.req\n//input.next\n\ninput.res.send(input.res.body)\n\n// todo: do something with the success port\n",
+      "ports": {
+        "input": {
+          "req": {
+            "type": "object"
+          },
+          "res": {
+            "type": "object"
+          },
+          "next": {
+            "type": "function"
+          }
+        },
+        "output": {
+          "dummy": {
+            "type": "null"
+          }
+        }
+      },
+      "description": "express send",
+      "name": "express.send"
+    }
+  },
+  "twigs": {
+    "express.get": {
+      "name": "express.get",
+      "description": "ExpressJS get",
+      "nodes": [
+        {
+          "name": "express.app"
+        },
+        {
+          "name": "express.get",
+          "context": {
+            "path": "/"
+          }
+        },
+        {
+          "name": "express.send"
+        },
+        {
+          "name": "express.listen",
+          "context": {
+            "port": "2376"
+          }
+        }
+      ],
+      "links": [
+        {
+          "source": 0,
+          "target": 1,
+          "out": "app",
+          "in": "app"
+        },
+        {
+          "source": 0,
+          "target": 3,
+          "out": "app",
+          "in": "app"
+        },
+        {
+          "source": 1,
+          "target": 2,
+          "out": "req",
+          "in": "req"
+        },
+        {
+          "source": 1,
+          "target": 2,
+          "out": "res",
+          "in": "res"
+        },
+        {
+          "source": 1,
+          "target": 2,
+          "out": "next",
+          "in": "next"
+        },
+        {
+          "source": 2,
+          "target": 3,
+          "out": "dummy",
+          "in": "dummy"
+        }
+      ]
+    }
+  }
+}
