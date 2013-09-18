@@ -15,10 +15,13 @@
   "dependencies": {
     "express": "latest"
   },
-  "nodes": {
-    "app": {
-      "fn": "output = { app: express() }\n",
-      "ns": "express",
+  "nodes": [
+    {
+      "name": "app",
+      "description": "express app",
+      "require": {
+        "express": "latest"
+      },
       "ports": {
         "input": {
           "dummy": {
@@ -34,15 +37,11 @@
           }
         }
       },
-      "require": {
-        "express": "latest"
-      },
-      "description": "express app",
-      "name": "app"
+      "ns": "express"
     },
-    "get": {
-      "fn": "output = [input.app, 'get', input.path]\n",
-      "ns": "express",
+    {
+      "name": "get",
+      "description": "express get",
       "ports": {
         "input": {
           "app": {
@@ -65,12 +64,11 @@
           }
         }
       },
-      "description": "express get",
-      "name": "get"
+      "ns": "express"
     },
-    "listen": {
-      "fn": "output = { output: input.app.listen(input.port) }\n",
-      "ns": "express",
+    {
+      "name": "listen",
+      "description": "express listen",
       "ports": {
         "input": {
           "app": {
@@ -89,12 +87,11 @@
           }
         }
       },
-      "description": "express listen",
-      "name": "listen"
+      "ns": "express"
     },
-    "post": {
-      "fn": "output = [input.app, 'post', input.path]\n",
-      "ns": "express",
+    {
+      "name": "post",
+      "description": "express post",
       "ports": {
         "input": {
           "app": {
@@ -110,12 +107,11 @@
           }
         }
       },
-      "description": "express post",
-      "name": "post"
+      "ns": "express"
     },
-    "send": {
-      "fn": "\n//input.req\n//input.next\n\ninput.res.send(input.res.body)\n\n// todo: do something with the success port\n",
-      "ns": "express",
+    {
+      "name": "send",
+      "description": "express send",
       "ports": {
         "input": {
           "req": {
@@ -134,10 +130,9 @@
           }
         }
       },
-      "description": "express send",
-      "name": "send"
+      "ns": "express"
     }
-  },
+  ],
   "twigs": {
     "ns": "express",
     "get": {
