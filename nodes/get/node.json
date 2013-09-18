@@ -1,5 +1,5 @@
 {
-  "name": "express.get",
+  "name": "get",
   "description": "express get",
   "ports": {
     "input": {

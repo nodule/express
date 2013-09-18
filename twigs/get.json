@@ -1,5 +1,5 @@
 {
-  "name": "express.get",
+  "name": "get",
   "description": "ExpressJS get",
   "nodes": [
     { "name": "express.app" },

@@ -39,7 +39,7 @@
       "description": "express app",
       "name": "app"
     },
-    "express.get": {
+    "get": {
       "fn": "output = [input.app, 'get', input.path]\n",
       "ports": {
         "input": {
@@ -64,9 +64,9 @@
         }
       },
       "description": "express get",
-      "name": "express.get"
+      "name": "get"
     },
-    "express.listen": {
+    "listen": {
       "fn": "output = { output: input.app.listen(input.port) }\n",
       "ports": {
         "input": {
@@ -87,9 +87,9 @@
         }
       },
       "description": "express listen",
-      "name": "express.listen"
+      "name": "listen"
     },
-    "express.post": {
+    "post": {
       "fn": "output = [input.app, 'post', input.path]\n",
       "ports": {
         "input": {
@@ -107,9 +107,9 @@
         }
       },
       "description": "express post",
-      "name": "express.post"
+      "name": "post"
     },
-    "express.send": {
+    "send": {
       "fn": "\n//input.req\n//input.next\n\ninput.res.send(input.res.body)\n\n// todo: do something with the success port\n",
       "ports": {
         "input": {
@@ -130,12 +130,12 @@
         }
       },
       "description": "express send",
-      "name": "express.send"
+      "name": "send"
     }
   },
   "twigs": {
-    "express.get": {
-      "name": "express.get",
+    "get": {
+      "name": "get",
       "description": "ExpressJS get",
       "nodes": [
         {
