@@ -2,10 +2,10 @@
   "name": "get",
   "description": "ExpressJS get",
   "nodes": [
-    { "name": "express.app" },
-    { "name": "express.get", "context": { "path": "/" } },
-    { "name": "express.send" },
-    { "name": "express.listen", "context": { "port": "2376" } }
+    { "ns": "express", "name": "app" },
+    { "ns": "express", "name": "get", "context": { "path": "/" } },
+    { "ns": "express", "name": "send" },
+    { "ns": "express", "name": "listen", "context": { "port": "2376" } }
   ],
   "links": [
     { "source": 0, "target": 1, "out": "app", "in": "app" },
