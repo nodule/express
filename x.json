@@ -134,8 +134,8 @@
     }
   },
   "twigs": {
-    "get": {
-      "name": "get",
+    "chix-express": {
+      "name": "chix-express",
       "description": "ExpressJS get",
       "nodes": [
         {
