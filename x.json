@@ -17,11 +17,6 @@
   },
   "nodes": [
     {
-      "name": "app",
-      "description": "express app",
-      "require": {
-        "express": "latest"
-      },
       "ports": {
         "input": {
           "dummy": {
@@ -37,11 +32,15 @@
           }
         }
       },
-      "ns": "express"
+      "require": {
+        "express": "latest"
+      },
+      "description": "express app",
+      "name": "app",
+      "ns": "express",
+      "fn": "output = { app: express() }\n"
     },
     {
-      "name": "get",
-      "description": "express get",
       "ports": {
         "input": {
           "app": {
@@ -64,11 +63,12 @@
           }
         }
       },
-      "ns": "express"
+      "description": "express get",
+      "name": "get",
+      "ns": "express",
+      "fn": "output = [input.app, 'get', input.path]\n"
     },
     {
-      "name": "listen",
-      "description": "express listen",
       "ports": {
         "input": {
           "app": {
@@ -87,11 +87,12 @@
           }
         }
       },
-      "ns": "express"
+      "description": "express listen",
+      "name": "listen",
+      "ns": "express",
+      "fn": "output = { output: input.app.listen(input.port) }\n"
     },
     {
-      "name": "post",
-      "description": "express post",
       "ports": {
         "input": {
           "app": {
@@ -107,11 +108,12 @@
           }
         }
       },
-      "ns": "express"
+      "description": "express post",
+      "name": "post",
+      "ns": "express",
+      "fn": "output = [input.app, 'post', input.path]\n"
     },
     {
-      "name": "send",
-      "description": "express send",
       "ports": {
         "input": {
           "req": {
@@ -130,7 +132,10 @@
           }
         }
       },
-      "ns": "express"
+      "description": "express send",
+      "name": "send",
+      "ns": "express",
+      "fn": "\n//input.req\n//input.next\n\ninput.res.send(input.res.body)\n\n// todo: do something with the success port\n"
     }
   ],
   "twigs": [
