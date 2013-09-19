@@ -1,18 +1,69 @@
 {
-  "name": "get",
-  "description": "ExpressJS get",
-  "nodes": [
-    { "ns": "express", "name": "app" },
-    { "ns": "express", "name": "get", "context": { "path": "/" } },
-    { "ns": "express", "name": "send" },
-    { "ns": "express", "name": "listen", "context": { "port": "2376" } }
+  "name":"get",
+  "description":"ExpressJS get",
+  "nodes":[
+    {
+      "ns":"express",
+      "name":"app",
+      "context":{
+        "dummy":null
+      }
+    },
+    {
+      "ns":"express",
+      "name":"get",
+      "context":{
+        "path":"/"
+      }
+    },
+    {
+      "ns":"express",
+      "name":"send"
+    },
+    {
+      "ns":"express",
+      "name":"listen",
+      "context":{
+        "port":"2376"
+      }
+    }
   ],
-  "links": [
-    { "source": 0, "target": 1, "out": "app", "in": "app" },
-    { "source": 0, "target": 3, "out": "app", "in": "app" },
-    { "source": 1, "target": 2, "out": "req", "in": "req" },
-    { "source": 1, "target": 2, "out": "res", "in": "res" },
-    { "source": 1, "target": 2, "out": "next", "in": "next" },
-    { "source": 2, "target": 3, "out": "dummy", "in": "dummy" }
+  "links":[
+    {
+      "source":0,
+      "target":1,
+      "out":"app",
+      "in":"app"
+    },
+    {
+      "source":0,
+      "target":3,
+      "out":"app",
+      "in":"app"
+    },
+    {
+      "source":1,
+      "target":2,
+      "out":"req",
+      "in":"req"
+    },
+    {
+      "source":1,
+      "target":2,
+      "out":"res",
+      "in":"res"
+    },
+    {
+      "source":1,
+      "target":2,
+      "out":"next",
+      "in":"next"
+    },
+    {
+      "source":2,
+      "target":3,
+      "out":"dummy",
+      "in":"dummy"
+    }
   ]
 }
