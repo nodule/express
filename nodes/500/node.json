@@ -1,0 +1,22 @@
+{
+  "name": "500",
+  "description": "500 error",
+  "ports": {
+    "input": {
+      "error": {
+        "type": "object"
+      },
+      "req": {
+        "type": "object"
+      },
+      "res": {
+        "type": "object"
+      },
+      "next": {
+        "type": "function"
+      }
+    },
+    "output": {
+    }
+  }
+}

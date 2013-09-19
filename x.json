@@ -19,6 +19,29 @@
     {
       "ports": {
         "input": {
+          "error": {
+            "type": "object"
+          },
+          "req": {
+            "type": "object"
+          },
+          "res": {
+            "type": "object"
+          },
+          "next": {
+            "type": "function"
+          }
+        },
+        "output": {}
+      },
+      "description": "500 error",
+      "name": "500",
+      "ns": "express",
+      "fn": "console.error(input.error.stack);\n//(err, req, res, next){\nconsole.error(err.stack);\ninput.res.send(500, err.stack.toString());\n"
+    },
+    {
+      "ports": {
+        "input": {
           "dummy": {
             "type": "null"
           }
@@ -39,6 +62,33 @@
       "name": "app",
       "ns": "express",
       "fn": "output = { app: express() }\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "app": {
+            "type": "function"
+          }
+        },
+        "output": {
+          "error": {
+            "type": "object"
+          },
+          "req": {
+            "type": "object"
+          },
+          "res": {
+            "type": "object"
+          },
+          "next": {
+            "type": "function"
+          }
+        }
+      },
+      "description": "express error",
+      "name": "error",
+      "ns": "express",
+      "fn": "output = [input.app, 'use']\n"
     },
     {
       "ports": {
@@ -76,9 +126,6 @@
           },
           "port": {
             "type": "string"
-          },
-          "dummy": {
-            "type": "null"
           }
         },
         "output": {
@@ -145,7 +192,10 @@
       "nodes": [
         {
           "ns": "express",
-          "name": "app"
+          "name": "app",
+          "context": {
+            "dummy": null
+          }
         },
         {
           "ns": "express",

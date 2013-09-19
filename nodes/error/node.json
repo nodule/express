@@ -1,0 +1,25 @@
+{
+  "name": "error",
+  "description": "express error",
+  "ports": {
+    "input": {
+      "app": {
+        "type": "function"
+      }
+    },
+    "output": {
+      "error": {
+        "type": "object"
+      },
+      "req": {
+        "type": "object"
+      },
+      "res": {
+        "type": "object"
+      },
+      "next": {
+        "type": "function"
+      }
+    }
+  }
+}
