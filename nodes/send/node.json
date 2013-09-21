@@ -3,14 +3,11 @@
   "description": "express send",
   "ports": {
     "input": {
-      "req": {
-        "type": "object"
-      },
       "res": {
         "type": "object"
       },
-      "next": {
-        "type": "function"
+      "body": {
+        "type": "string"
       }
     },
     "output": {
