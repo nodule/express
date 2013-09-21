@@ -179,7 +179,7 @@
       "description": "express send",
       "name": "send",
       "ns": "express",
-      "fn": "\n//input.req\n//input.next\n\ninput.res.send(input.res.body)\n\n// todo: do something with the success port\n"
+      "fn": "input.res.send(input.body)"
     }
   ],
   "twigs": [
