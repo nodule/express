@@ -125,7 +125,10 @@
             "type": "function"
           },
           "port": {
-            "type": "string"
+            "type": [
+              "string",
+              "number"
+            ]
           }
         },
         "output": {
