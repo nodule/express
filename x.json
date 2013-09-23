@@ -185,6 +185,7 @@
   "twigs": [
     {
       "name": "get",
+      "ns": "express",
       "description": "ExpressJS get",
       "nodes": [
         {
@@ -250,8 +251,7 @@
           "out": "dummy",
           "in": "dummy"
         }
-      ],
-      "ns": "express"
+      ]
     }
   ]
 }
