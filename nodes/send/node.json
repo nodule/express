@@ -1,13 +1,18 @@
 {
   "name": "send",
-  "description": "express send",
+  "description": "express send string",
   "ports": {
     "input": {
       "res": {
-        "type": "object"
+        "type": "object",
+        "title": "Express response object",
+        "required": "true",
+        "readonly": "true"
       },
       "body": {
-        "type": "string"
+        "type": "string",
+        "title": "The response body",
+        "required": "true"
       }
     },
     "output": {

@@ -4,7 +4,10 @@
   "ports": {
     "input": {
       "app": {
-        "type": "function"
+        "type": "function",
+        "title": "Express app",
+        "required": true,
+        "readonly": true
       }
     },
     "output": {

@@ -4,10 +4,16 @@
   "ports": {
     "input": {
       "app": {
-        "type": "function"
+        "type": "function",
+        "title": "Express app",
+        "readonly": true,
+        "required": true
       },
       "port": {
-        "type": "string"
+        "type": "string",
+        "title": "Port",
+        "description": "The port this express app should listen on",
+        "required": true
       }
     },
     "output": {

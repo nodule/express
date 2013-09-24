@@ -4,10 +4,15 @@
   "ports": {
     "input": {
       "app": {
-        "type": "function"
+        "type": "function",
+        "title": "Express app",
+        "required": true,
+        "readonly": true
       },
       "path": {
-        "type": "string"
+        "type": "string",
+        "title": "Router path",
+        "required": true
       }
     },
     "output": {

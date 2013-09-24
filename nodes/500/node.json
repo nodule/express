@@ -4,16 +4,21 @@
   "ports": {
     "input": {
       "error": {
-        "type": "object"
+        "type": "object",
+        "title": "Error message"
       },
       "req": {
-        "type": "object"
+        "type": "object",
+        "title": "Express request object"
       },
       "res": {
-        "type": "object"
+        "type": "object",
+        "title": "Express response object"
       },
       "next": {
-        "type": "function"
+        "type": "function",
+        "title": "Express response object",
+        "readonly": true
       }
     },
     "output": {

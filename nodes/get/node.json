@@ -4,11 +4,17 @@
   "ports": {
     "input": {
       "app": {
-        "type": "function"
+        "type": "function",
+        "title": "Express app",
+        "readonly": true,
+        "required": true
       },
       "path": {
         "type": "string",
-        "default": "/"
+        "default": "/",
+        "title": "A router path",
+        "description": "Regular expressions may also be used, and can be useful if you have very specific restraints",
+        "required": true
       }
     },
     "output": {
