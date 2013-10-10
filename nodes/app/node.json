@@ -6,17 +6,10 @@
   },
   "ports": {
     "input": {
-      "dummy": {
-        "type": "null",
-        "title": "Dummy port, deprecated"
-      }
     },
     "output": {
       "app": {
         "type": "function"
-      },
-      "dummy": {
-        "type": "null"
       }
     }
   }
