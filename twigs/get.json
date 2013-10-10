@@ -5,10 +5,7 @@
   "nodes":[
     {
       "ns":"express",
-      "name":"app",
-      "context":{
-        "dummy":null
-      }
+      "name":"app"
     },
     {
       "ns":"express",
@@ -59,12 +56,6 @@
       "target":2,
       "out":"next",
       "in":"next"
-    },
-    {
-      "source":2,
-      "target":3,
-      "out":"dummy",
-      "in":"dummy"
     }
   ]
 }

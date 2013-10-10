@@ -3,7 +3,7 @@
   "ns":"express",
   "description":"robberthalff.com website",
   "nodes":[
-    { "ns":"express", "name":"app", "context":{ "dummy": null } },
+    { "ns":"express", "name":"app" },
     { "ns":"express", "name":"get", "context":{ "path": "/" } },
     { "ns":"http", "name":"request", "context":{ "url": "https://github.com/psichi/chix-website/raw/master/website.md" } },
     { "ns":"template", "name":"markdown" },

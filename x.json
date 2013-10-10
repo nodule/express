@@ -46,18 +46,10 @@
     },
     {
       "ports": {
-        "input": {
-          "dummy": {
-            "type": "null",
-            "title": "Dummy port, deprecated"
-          }
-        },
+        "input": {},
         "output": {
           "app": {
             "type": "function"
-          },
-          "dummy": {
-            "type": "null"
           }
         }
       },
@@ -200,11 +192,6 @@
             "title": "The response body",
             "required": "true"
           }
-        },
-        "output": {
-          "dummy": {
-            "type": "null"
-          }
         }
       },
       "description": "express send string",
@@ -221,10 +208,7 @@
       "nodes": [
         {
           "ns": "express",
-          "name": "app",
-          "context": {
-            "dummy": null
-          }
+          "name": "app"
         },
         {
           "ns": "express",
@@ -301,10 +285,7 @@
       "nodes": [
         {
           "ns": "express",
-          "name": "app",
-          "context": {
-            "dummy": null
-          }
+          "name": "app"
         },
         {
           "ns": "express",
@@ -355,12 +336,6 @@
           "target": 2,
           "out": "next",
           "in": "next"
-        },
-        {
-          "source": 2,
-          "target": 3,
-          "out": "dummy",
-          "in": "dummy"
         }
       ]
     }
