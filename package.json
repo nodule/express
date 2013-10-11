@@ -19,7 +19,13 @@
   "dependencies": {
     "express": "latest"
   },
+  "devDependencies": {
+    "chit": "0.x.x"
+  },
   "main": "x",
+  "scripts": {
+    "test": "chit"
+  },
   "chix": {
     "name": "express"
   }
