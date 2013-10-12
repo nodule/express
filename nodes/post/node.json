@@ -1,5 +1,6 @@
 {
   "name": "post",
+  "ns": "express",
   "description": "express post",
   "ports": {
     "input": {

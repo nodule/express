@@ -1,5 +1,6 @@
 {
   "name": "app",
+  "ns": "express",
   "description": "express app",
   "require": {
     "express": "latest"

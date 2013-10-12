@@ -3,17 +3,64 @@
   "ns": "express",
   "description": "ExpressJS get",
   "nodes": [
-    { "id": "0", "ns": "express", "name": "app" },
-    { "id": "1", "ns": "express", "name": "get", "context": { "path": "/" } },
-    { "id": "2", "ns": "express", "name": "send" },
-    { "id": "3", "ns": "express", "name": "listen", "context": { "port": "2376" } }
+    {
+      "id": "0",
+      "ns": "express",
+      "name": "app"
+    },
+    {
+      "id": "1",
+      "ns": "express",
+      "name": "get",
+      "context": {
+        "path": "/"
+      }
+    },
+    {
+      "id": "2",
+      "ns": "express",
+      "name": "send"
+    },
+    {
+      "id": "3",
+      "ns": "express",
+      "name": "listen",
+      "context": {
+        "port": "2376"
+      }
+    }
   ],
   "links": [
-    { "source": "0", "target": "1", "out": "app", "in": "app" },
-    { "source": "0", "target": "3", "out": "app", "in": "app" },
-    { "source": "1", "target": "2", "out": "req", "in": "req" },
-    { "source": "1", "target": "2", "out": "res", "in": "res" },
-    { "source": "1", "target": "2", "out": "next", "in": "next" }
+    {
+      "source": "0",
+      "target": "1",
+      "out": "app",
+      "in": "app"
+    },
+    {
+      "source": "0",
+      "target": "3",
+      "out": "app",
+      "in": "app"
+    },
+    {
+      "source": "1",
+      "target": "2",
+      "out": "req",
+      "in": "req"
+    },
+    {
+      "source": "1",
+      "target": "2",
+      "out": "res",
+      "in": "res"
+    },
+    {
+      "source": "1",
+      "target": "2",
+      "out": "next",
+      "in": "next"
+    }
   ],
   "nodeDefinitions": {
     "express": {
@@ -33,7 +80,7 @@
         "name": "app",
         "ns": "express",
         "fn": "output = { app: express() }\n",
-        "_id": "5258bf00d1c59a9537000016"
+        "_id": "5258df9de627d7dc78000016"
       },
       "get": {
         "ports": {
@@ -68,7 +115,7 @@
         "name": "get",
         "ns": "express",
         "fn": "output = [input.app, 'get', input.path]\n",
-        "_id": "5258bf00d1c59a9537000018"
+        "_id": "5258df9de627d7dc78000019"
       },
       "send": {
         "ports": {
@@ -84,13 +131,14 @@
               "title": "The response body",
               "required": "true"
             }
-          }
+          },
+          "output": {}
         },
         "description": "express send string",
         "name": "send",
         "ns": "express",
         "fn": "input.res.send(input.body)",
-        "_id": "5258bf00d1c59a953700001b"
+        "_id": "5258df9de627d7dc7800001c"
       },
       "listen": {
         "ports": {
@@ -109,7 +157,7 @@
             }
           },
           "output": {
-            "output": {
+            "server": {
               "type": "object"
             }
           }
@@ -117,8 +165,8 @@
         "description": "express listen",
         "name": "listen",
         "ns": "express",
-        "fn": "output = { output: input.app.listen(input.port) }\n",
-        "_id": "5258bf00d1c59a9537000019"
+        "fn": "output = { server: input.app.listen(input.port) }\n",
+        "_id": "5258df9de627d7dc7800001a"
       }
     }
   }

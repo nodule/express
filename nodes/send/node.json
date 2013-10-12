@@ -1,5 +1,6 @@
 {
   "name": "send",
+  "ns": "express",
   "description": "express send string",
   "ports": {
     "input": {

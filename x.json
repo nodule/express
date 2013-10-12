@@ -34,8 +34,8 @@
         "output": {}
       },
       "description": "500 error",
-      "name": "500",
       "ns": "express",
+      "name": "500",
       "fn": "console.error(input.error.stack);\n//(err, req, res, next){\nconsole.error(err.stack);\ninput.res.send(500, err.stack.toString());\n"
     },
     {
@@ -51,8 +51,8 @@
         "express": "latest"
       },
       "description": "express app",
-      "name": "app",
       "ns": "express",
+      "name": "app",
       "fn": "output = { app: express() }\n"
     },
     {
@@ -68,8 +68,8 @@
         "output": {}
       },
       "description": "Close server (todo: can close any server connection, not just express)",
-      "name": "close",
       "ns": "express",
+      "name": "close",
       "fn": "input.server.close();\n"
     },
     {
@@ -98,8 +98,8 @@
         }
       },
       "description": "express error",
-      "name": "error",
       "ns": "express",
+      "name": "error",
       "fn": "output = [input.app, 'use']\n"
     },
     {
@@ -132,8 +132,8 @@
         }
       },
       "description": "express get",
-      "name": "get",
       "ns": "express",
+      "name": "get",
       "fn": "output = [input.app, 'get', input.path]\n"
     },
     {
@@ -159,8 +159,8 @@
         }
       },
       "description": "express listen",
-      "name": "listen",
       "ns": "express",
+      "name": "listen",
       "fn": "output = { server: input.app.listen(input.port) }\n"
     },
     {
@@ -185,8 +185,8 @@
         }
       },
       "description": "express post",
-      "name": "post",
       "ns": "express",
+      "name": "post",
       "fn": "output = [input.app, 'post', input.path]\n"
     },
     {
@@ -207,8 +207,8 @@
         "output": {}
       },
       "description": "express send string",
-      "name": "send",
       "ns": "express",
+      "name": "send",
       "fn": "input.res.send(input.body)"
     }
   ],
@@ -295,7 +295,7 @@
             "name": "app",
             "ns": "express",
             "fn": "output = { app: express() }\n",
-            "_id": "5258bf00d1c59a9537000016"
+            "_id": "5258df9de627d7dc78000016"
           },
           "get": {
             "ports": {
@@ -330,7 +330,7 @@
             "name": "get",
             "ns": "express",
             "fn": "output = [input.app, 'get', input.path]\n",
-            "_id": "5258bf00d1c59a9537000018"
+            "_id": "5258df9de627d7dc78000019"
           },
           "send": {
             "ports": {
@@ -346,13 +346,14 @@
                   "title": "The response body",
                   "required": "true"
                 }
-              }
+              },
+              "output": {}
             },
             "description": "express send string",
             "name": "send",
             "ns": "express",
             "fn": "input.res.send(input.body)",
-            "_id": "5258bf00d1c59a953700001b"
+            "_id": "5258df9de627d7dc7800001c"
           },
           "listen": {
             "ports": {
@@ -371,7 +372,7 @@
                 }
               },
               "output": {
-                "output": {
+                "server": {
                   "type": "object"
                 }
               }
@@ -379,8 +380,8 @@
             "description": "express listen",
             "name": "listen",
             "ns": "express",
-            "fn": "output = { output: input.app.listen(input.port) }\n",
-            "_id": "5258bf00d1c59a9537000019"
+            "fn": "output = { server: input.app.listen(input.port) }\n",
+            "_id": "5258df9de627d7dc7800001a"
           }
         }
       }
@@ -467,7 +468,7 @@
             "name": "app",
             "ns": "express",
             "fn": "output = { app: express() }\n",
-            "_id": "5258bf00d1c59a9537000016"
+            "_id": "5258df9de627d7dc78000016"
           },
           "get": {
             "ports": {
@@ -502,7 +503,7 @@
             "name": "get",
             "ns": "express",
             "fn": "output = [input.app, 'get', input.path]\n",
-            "_id": "5258bf00d1c59a9537000018"
+            "_id": "5258df9de627d7dc78000019"
           },
           "send": {
             "ports": {
@@ -518,13 +519,14 @@
                   "title": "The response body",
                   "required": "true"
                 }
-              }
+              },
+              "output": {}
             },
             "description": "express send string",
             "name": "send",
             "ns": "express",
             "fn": "input.res.send(input.body)",
-            "_id": "5258bf00d1c59a953700001b"
+            "_id": "5258df9de627d7dc7800001c"
           },
           "listen": {
             "ports": {
@@ -543,7 +545,7 @@
                 }
               },
               "output": {
-                "output": {
+                "server": {
                   "type": "object"
                 }
               }
@@ -551,8 +553,8 @@
             "description": "express listen",
             "name": "listen",
             "ns": "express",
-            "fn": "output = { output: input.app.listen(input.port) }\n",
-            "_id": "5258bf00d1c59a9537000019"
+            "fn": "output = { server: input.app.listen(input.port) }\n",
+            "_id": "5258df9de627d7dc7800001a"
           }
         }
       }

@@ -1,5 +1,6 @@
 {
   "name": "500",
+  "ns": "express",
   "description": "500 error",
   "ports": {
     "input": {
