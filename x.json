@@ -2,15 +2,9 @@
   "name": "express",
   "description": "Express for Chiχ",
   "version": "0.0.3",
-  "licences": [
-    {
-      "type": "MIT",
-      "url": "https://github.com/psichi/chix/raw/master/LICENSE"
-    }
-  ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/psichi/chix-express.git"
+    "url": "https://github.com/nodule/express.git"
   },
   "dependencies": {
     "express": "latest"
@@ -207,10 +201,12 @@
       "description": "robberthalff.com website",
       "nodes": [
         {
+          "id": "0",
           "ns": "express",
           "name": "app"
         },
         {
+          "id": "1",
           "ns": "express",
           "name": "get",
           "context": {
@@ -218,6 +214,7 @@
           }
         },
         {
+          "id": "2",
           "ns": "http",
           "name": "request",
           "context": {
@@ -225,14 +222,17 @@
           }
         },
         {
+          "id": "3",
           "ns": "template",
           "name": "markdown"
         },
         {
+          "id": "4",
           "ns": "express",
           "name": "send"
         },
         {
+          "id": "5",
           "ns": "express",
           "name": "listen",
           "context": {
@@ -240,38 +240,39 @@
           }
         },
         {
+          "id": "6",
           "ns": "console",
           "name": "log"
         }
       ],
       "links": [
         {
-          "source": 0,
-          "target": 5,
+          "source": "0",
+          "target": "5",
           "out": "app",
           "in": "app"
         },
         {
-          "source": 0,
-          "target": 1,
+          "source": "0",
+          "target": "1",
           "out": "app",
           "in": "app"
         },
         {
-          "source": 1,
-          "target": 4,
+          "source": "1",
+          "target": "4",
           "out": "res",
           "in": "res"
         },
         {
-          "source": 2,
-          "target": 3,
+          "source": "2",
+          "target": "3",
           "out": "body",
           "in": "body"
         },
         {
-          "source": 3,
-          "target": 4,
+          "source": "3",
+          "target": "4",
           "out": "body",
           "in": "body",
           "persist": true
@@ -284,10 +285,12 @@
       "description": "ExpressJS get",
       "nodes": [
         {
+          "id": "0",
           "ns": "express",
           "name": "app"
         },
         {
+          "id": "1",
           "ns": "express",
           "name": "get",
           "context": {
@@ -295,10 +298,12 @@
           }
         },
         {
+          "id": "2",
           "ns": "express",
           "name": "send"
         },
         {
+          "id": "3",
           "ns": "express",
           "name": "listen",
           "context": {
@@ -308,32 +313,32 @@
       ],
       "links": [
         {
-          "source": 0,
-          "target": 1,
+          "source": "0",
+          "target": "1",
           "out": "app",
           "in": "app"
         },
         {
-          "source": 0,
-          "target": 3,
+          "source": "0",
+          "target": "3",
           "out": "app",
           "in": "app"
         },
         {
-          "source": 1,
-          "target": 2,
+          "source": "1",
+          "target": "2",
           "out": "req",
           "in": "req"
         },
         {
-          "source": 1,
-          "target": 2,
+          "source": "1",
+          "target": "2",
           "out": "res",
           "in": "res"
         },
         {
-          "source": 1,
-          "target": 2,
+          "source": "1",
+          "target": "2",
           "out": "next",
           "in": "next"
         }
