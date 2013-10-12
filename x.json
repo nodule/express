@@ -203,7 +203,8 @@
             "title": "The response body",
             "required": "true"
           }
-        }
+        },
+        "output": {}
       },
       "description": "express send string",
       "name": "send",
