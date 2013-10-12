@@ -1,0 +1,8 @@
+Make sure the twigs will end, so they can be used for tests.
+
+This is possible for example by including a close connection somewhere.
+
+Serve one page, and close the connection after that within the flow.
+
+This way the flow still can be re-used as example.
+And then just remove the node which closes the connection.
