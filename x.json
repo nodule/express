@@ -58,6 +58,23 @@
     {
       "ports": {
         "input": {
+          "server": {
+            "type": "object",
+            "title": "HTTP Server",
+            "readonly": true,
+            "required": true
+          }
+        },
+        "output": {}
+      },
+      "description": "Close server (todo: can close any server connection, not just express)",
+      "name": "close",
+      "ns": "express",
+      "fn": "input.server.close();\n"
+    },
+    {
+      "ports": {
+        "input": {
           "app": {
             "type": "function",
             "title": "Express app",
@@ -136,7 +153,7 @@
           }
         },
         "output": {
-          "output": {
+          "server": {
             "type": "object"
           }
         }
@@ -144,7 +161,7 @@
       "description": "express listen",
       "name": "listen",
       "ns": "express",
-      "fn": "output = { output: input.app.listen(input.port) }\n"
+      "fn": "output = { server: input.app.listen(input.port) }\n"
     },
     {
       "ports": {
@@ -196,9 +213,9 @@
   ],
   "twigs": [
     {
-      "name": "app",
+      "name": "get",
       "ns": "express",
-      "description": "robberthalff.com website",
+      "description": "ExpressJS get",
       "nodes": [
         {
           "id": "0",
@@ -215,43 +232,19 @@
         },
         {
           "id": "2",
-          "ns": "http",
-          "name": "request",
-          "context": {
-            "url": "https://github.com/psichi/chix-website/raw/master/website.md"
-          }
-        },
-        {
-          "id": "3",
-          "ns": "template",
-          "name": "markdown"
-        },
-        {
-          "id": "4",
           "ns": "express",
           "name": "send"
         },
         {
-          "id": "5",
+          "id": "3",
           "ns": "express",
           "name": "listen",
           "context": {
-            "port": "80"
+            "port": "2376"
           }
-        },
-        {
-          "id": "6",
-          "ns": "console",
-          "name": "log"
         }
       ],
       "links": [
-        {
-          "source": "0",
-          "target": "5",
-          "out": "app",
-          "in": "app"
-        },
         {
           "source": "0",
           "target": "1",
@@ -259,25 +252,137 @@
           "in": "app"
         },
         {
+          "source": "0",
+          "target": "3",
+          "out": "app",
+          "in": "app"
+        },
+        {
           "source": "1",
-          "target": "4",
+          "target": "2",
+          "out": "req",
+          "in": "req"
+        },
+        {
+          "source": "1",
+          "target": "2",
           "out": "res",
           "in": "res"
         },
         {
-          "source": "2",
-          "target": "3",
-          "out": "body",
-          "in": "body"
-        },
-        {
-          "source": "3",
-          "target": "4",
-          "out": "body",
-          "in": "body",
-          "persist": true
+          "source": "1",
+          "target": "2",
+          "out": "next",
+          "in": "next"
         }
-      ]
+      ],
+      "nodeDefinitions": {
+        "express": {
+          "app": {
+            "ports": {
+              "input": {},
+              "output": {
+                "app": {
+                  "type": "function"
+                }
+              }
+            },
+            "require": {
+              "express": "latest"
+            },
+            "description": "express app",
+            "name": "app",
+            "ns": "express",
+            "fn": "output = { app: express() }\n",
+            "_id": "5258bf00d1c59a9537000016"
+          },
+          "get": {
+            "ports": {
+              "input": {
+                "app": {
+                  "type": "function",
+                  "title": "Express app",
+                  "readonly": true,
+                  "required": true
+                },
+                "path": {
+                  "type": "string",
+                  "default": "/",
+                  "title": "A router path",
+                  "description": "Regular expressions may also be used, and can be useful if you have very specific restraints",
+                  "required": true
+                }
+              },
+              "output": {
+                "req": {
+                  "type": "object"
+                },
+                "res": {
+                  "type": "object"
+                },
+                "next": {
+                  "type": "function"
+                }
+              }
+            },
+            "description": "express get",
+            "name": "get",
+            "ns": "express",
+            "fn": "output = [input.app, 'get', input.path]\n",
+            "_id": "5258bf00d1c59a9537000018"
+          },
+          "send": {
+            "ports": {
+              "input": {
+                "res": {
+                  "type": "object",
+                  "title": "Express response object",
+                  "required": "true",
+                  "readonly": "true"
+                },
+                "body": {
+                  "type": "string",
+                  "title": "The response body",
+                  "required": "true"
+                }
+              }
+            },
+            "description": "express send string",
+            "name": "send",
+            "ns": "express",
+            "fn": "input.res.send(input.body)",
+            "_id": "5258bf00d1c59a953700001b"
+          },
+          "listen": {
+            "ports": {
+              "input": {
+                "app": {
+                  "type": "function",
+                  "title": "Express app",
+                  "readonly": true,
+                  "required": true
+                },
+                "port": {
+                  "type": "string",
+                  "title": "Port",
+                  "description": "The port this express app should listen on",
+                  "required": true
+                }
+              },
+              "output": {
+                "output": {
+                  "type": "object"
+                }
+              }
+            },
+            "description": "express listen",
+            "name": "listen",
+            "ns": "express",
+            "fn": "output = { output: input.app.listen(input.port) }\n",
+            "_id": "5258bf00d1c59a9537000019"
+          }
+        }
+      }
     },
     {
       "name": "get",
@@ -342,7 +447,114 @@
           "out": "next",
           "in": "next"
         }
-      ]
+      ],
+      "nodeDefinitions": {
+        "express": {
+          "app": {
+            "ports": {
+              "input": {},
+              "output": {
+                "app": {
+                  "type": "function"
+                }
+              }
+            },
+            "require": {
+              "express": "latest"
+            },
+            "description": "express app",
+            "name": "app",
+            "ns": "express",
+            "fn": "output = { app: express() }\n",
+            "_id": "5258bf00d1c59a9537000016"
+          },
+          "get": {
+            "ports": {
+              "input": {
+                "app": {
+                  "type": "function",
+                  "title": "Express app",
+                  "readonly": true,
+                  "required": true
+                },
+                "path": {
+                  "type": "string",
+                  "default": "/",
+                  "title": "A router path",
+                  "description": "Regular expressions may also be used, and can be useful if you have very specific restraints",
+                  "required": true
+                }
+              },
+              "output": {
+                "req": {
+                  "type": "object"
+                },
+                "res": {
+                  "type": "object"
+                },
+                "next": {
+                  "type": "function"
+                }
+              }
+            },
+            "description": "express get",
+            "name": "get",
+            "ns": "express",
+            "fn": "output = [input.app, 'get', input.path]\n",
+            "_id": "5258bf00d1c59a9537000018"
+          },
+          "send": {
+            "ports": {
+              "input": {
+                "res": {
+                  "type": "object",
+                  "title": "Express response object",
+                  "required": "true",
+                  "readonly": "true"
+                },
+                "body": {
+                  "type": "string",
+                  "title": "The response body",
+                  "required": "true"
+                }
+              }
+            },
+            "description": "express send string",
+            "name": "send",
+            "ns": "express",
+            "fn": "input.res.send(input.body)",
+            "_id": "5258bf00d1c59a953700001b"
+          },
+          "listen": {
+            "ports": {
+              "input": {
+                "app": {
+                  "type": "function",
+                  "title": "Express app",
+                  "readonly": true,
+                  "required": true
+                },
+                "port": {
+                  "type": "string",
+                  "title": "Port",
+                  "description": "The port this express app should listen on",
+                  "required": true
+                }
+              },
+              "output": {
+                "output": {
+                  "type": "object"
+                }
+              }
+            },
+            "description": "express listen",
+            "name": "listen",
+            "ns": "express",
+            "fn": "output = { output: input.app.listen(input.port) }\n",
+            "_id": "5258bf00d1c59a9537000019"
+          }
+        }
+      }
     }
   ]
 }

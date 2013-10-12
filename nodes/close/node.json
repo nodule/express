@@ -1,0 +1,16 @@
+{
+  "name": "close",
+  "description": "Close server (todo: can close any server connection, not just express)",
+  "ports": {
+    "input": {
+      "server": {
+        "type": "object",
+        "title": "HTTP Server",
+        "readonly": true,
+        "required": true
+      }
+    },
+    "output": {
+    }
+  }
+}
