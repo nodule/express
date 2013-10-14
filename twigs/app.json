@@ -1,6 +1,7 @@
 {
   "name": "get",
   "ns": "express",
+  "title": "ExpressJS get",
   "description": "ExpressJS get",
   "nodes": [
     {
@@ -77,10 +78,33 @@
           "express": "latest"
         },
         "description": "express app",
-        "name": "app",
         "ns": "express",
+        "name": "app",
         "fn": "output = { app: express() }\n",
-        "_id": "5258df9de627d7dc78000016"
+        "_id": "525c197a4281fd450f000043"
+      },
+      "send": {
+        "ports": {
+          "input": {
+            "res": {
+              "type": "object",
+              "title": "Express response object",
+              "required": "true",
+              "readonly": "true"
+            },
+            "body": {
+              "type": "string",
+              "title": "The response body",
+              "required": "true"
+            }
+          },
+          "output": {}
+        },
+        "description": "express send string",
+        "ns": "express",
+        "name": "send",
+        "fn": "input.res.send(input.body)",
+        "_id": "525c197a4281fd450f000049"
       },
       "get": {
         "ports": {
@@ -112,33 +136,10 @@
           }
         },
         "description": "express get",
+        "ns": "express",
         "name": "get",
-        "ns": "express",
         "fn": "output = [input.app, 'get', input.path]\n",
-        "_id": "5258df9de627d7dc78000019"
-      },
-      "send": {
-        "ports": {
-          "input": {
-            "res": {
-              "type": "object",
-              "title": "Express response object",
-              "required": "true",
-              "readonly": "true"
-            },
-            "body": {
-              "type": "string",
-              "title": "The response body",
-              "required": "true"
-            }
-          },
-          "output": {}
-        },
-        "description": "express send string",
-        "name": "send",
-        "ns": "express",
-        "fn": "input.res.send(input.body)",
-        "_id": "5258df9de627d7dc7800001c"
+        "_id": "525c197a4281fd450f000046"
       },
       "listen": {
         "ports": {
@@ -163,10 +164,90 @@
           }
         },
         "description": "express listen",
-        "name": "listen",
         "ns": "express",
+        "name": "listen",
         "fn": "output = { server: input.app.listen(input.port) }\n",
-        "_id": "5258df9de627d7dc7800001a"
+        "_id": "525c197a4281fd450f000047"
+      }
+    },
+    "http": {
+      "request": {
+        "ports": {
+          "input": {
+            "url": {
+              "type": "string",
+              "format": "uri",
+              "title": "Url Request",
+              "description": "The url to be requested.",
+              "required": true
+            }
+          },
+          "output": {
+            "error": {
+              "type": "object"
+            },
+            "res": {
+              "type": "object"
+            },
+            "body": {
+              "type": "string"
+            }
+          }
+        },
+        "require": {
+          "request": "latest"
+        },
+        "description": "http request",
+        "ns": "http",
+        "name": "request",
+        "fn": "var obj = {};\nobj.request = request;\noutput = [obj, 'request', input.url]",
+        "_id": "525c197a4281fd450f00002d"
+      }
+    },
+    "template": {
+      "markdown": {
+        "ports": {
+          "input": {
+            "body": {
+              "type": "string",
+              "title": "Body",
+              "description": "The body of this markdown document",
+              "required": true
+            }
+          },
+          "output": {
+            "body": {
+              "type": "string"
+            }
+          }
+        },
+        "require": {
+          "marked": "latest"
+        },
+        "description": "Markdown",
+        "ns": "template",
+        "name": "markdown",
+        "fn": "output = { body: marked(input.body) }\n",
+        "_id": "525c197a4281fd450f000035"
+      }
+    },
+    "console": {
+      "log": {
+        "ports": {
+          "input": {
+            "msg": {
+              "type": "any",
+              "title": "Log message",
+              "description": "Logs a message to the console"
+            }
+          },
+          "output": {}
+        },
+        "description": "Console log",
+        "ns": "console",
+        "name": "log",
+        "fn": "console.log(input.msg)",
+        "_id": "525c197a4281fd450f000038"
       }
     }
   }
