@@ -16,6 +16,11 @@
         "required": "true"
       }
     },
-    "output": { }
+    "output": {
+      "event:complete": {
+        "type": "object",
+        "title": "Complete"
+      }
+    }
   }
 }
