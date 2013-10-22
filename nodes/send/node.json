@@ -2,6 +2,7 @@
   "name": "send",
   "ns": "express",
   "description": "express send string",
+  "inputTimeout": false,
   "ports": {
     "input": {
       "res": {

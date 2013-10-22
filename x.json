@@ -211,6 +211,7 @@
           }
         }
       },
+      "inputTimeout": false,
       "description": "express send string",
       "ns": "express",
       "name": "send",
