@@ -1,1 +1,2 @@
-output = { app: express() }
+
+output = { app: express(), express: express }

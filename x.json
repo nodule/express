@@ -43,6 +43,11 @@
         "input": {},
         "output": {
           "app": {
+            "title": "App",
+            "type": "function"
+          },
+          "express": {
+            "title": "Express",
             "type": "function"
           }
         }
@@ -53,7 +58,7 @@
       "description": "express app",
       "ns": "express",
       "name": "app",
-      "fn": "output = { app: express() }\n"
+      "fn": "\noutput = { app: express(), express: express }\n"
     },
     {
       "ports": {
@@ -211,7 +216,6 @@
           }
         }
       },
-      "inputTimeout": false,
       "description": "express send string",
       "ns": "express",
       "name": "send",
