@@ -22,6 +22,7 @@
     "test": "chit"
   },
   "chix": {
-    "name": "express"
+    "name": "express",
+    "color": "rgb(35,136,35)"
   }
 }
