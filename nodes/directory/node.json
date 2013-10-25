@@ -1,0 +1,46 @@
+{
+  "name": "directory",
+  "ns": "express",
+  "description": "Express directory serving middleware",
+  "ports": {
+    "input": {
+      "app": {
+        "type": "object",
+        "title": "App",
+        "readonly": "true"
+      },
+      "express": {
+        "type": "object",
+        "title": "Express",
+        "readonly": "true"
+      },
+      "path": {
+        "type": "string",
+        "title": "Path"
+      },
+      "options": {
+        "type": "object",
+        "title": "Options",
+        "properties": {
+          "hidden": {
+            "type": "boolean",
+            "title": "Hidden",
+            "default": false
+          },
+          "icons": {
+            "type": "boolean",
+            "title": "Icons",
+            "default": false
+          },
+          "filter": {
+            "type": "function",
+            "title": "Icons",
+            "default": false
+          }
+        }
+      }
+    },
+    "output": {
+    }
+  }
+}

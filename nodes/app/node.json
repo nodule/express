@@ -3,11 +3,10 @@
   "ns": "express",
   "description": "express app",
   "require": {
-    "express": "latest"
+    "express": "3.x.x"
   },
   "ports": {
-    "input": {
-    },
+    "input": { },
     "output": {
       "app": {
         "title": "App",

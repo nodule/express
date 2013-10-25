@@ -53,12 +53,33 @@
         }
       },
       "require": {
-        "express": "latest"
+        "express": "3.x.x"
       },
       "description": "express app",
       "ns": "express",
       "name": "app",
       "fn": "\noutput = { app: express(), express: express }\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "app": {
+            "type": "object",
+            "title": "App",
+            "readonly": "true"
+          },
+          "express": {
+            "type": "object",
+            "title": "Express",
+            "readonly": "true"
+          }
+        },
+        "output": {}
+      },
+      "description": "Express Body Parser",
+      "ns": "express",
+      "name": "bodyParser",
+      "fn": "output = [input.app, 'use', input.express.bodyParser()]\n"
     },
     {
       "ports": {
@@ -76,6 +97,136 @@
       "ns": "express",
       "name": "close",
       "fn": "input.server.close();\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "app": {
+            "type": "object",
+            "title": "App",
+            "readonly": "true"
+          },
+          "express": {
+            "type": "object",
+            "title": "Express",
+            "readonly": "true"
+          }
+        },
+        "output": {}
+      },
+      "description": "Express Compress",
+      "ns": "express",
+      "name": "compress",
+      "fn": "output = [input.app, 'use', input.express.compress()]\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "app": {
+            "type": "object",
+            "title": "App",
+            "readonly": "true"
+          },
+          "express": {
+            "type": "object",
+            "title": "Express",
+            "readonly": "true"
+          }
+        },
+        "output": {}
+      },
+      "description": "Express Cookie Parser",
+      "ns": "express",
+      "name": "cookieParser",
+      "fn": "output = [input.app, 'use', input.express.cookieParser()]\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "app": {
+            "type": "object",
+            "title": "App",
+            "readonly": "true"
+          },
+          "express": {
+            "type": "object",
+            "title": "Express",
+            "readonly": "true"
+          }
+        },
+        "output": {}
+      },
+      "description": "Express Cookie Session",
+      "ns": "express",
+      "name": "cookieSession",
+      "fn": "output = [input.app, 'use', input.express.cookieSession()]\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "app": {
+            "type": "object",
+            "title": "App",
+            "readonly": "true"
+          },
+          "express": {
+            "type": "object",
+            "title": "Express",
+            "readonly": "true"
+          }
+        },
+        "output": {}
+      },
+      "description": "Express CSRF protection middleware",
+      "ns": "express",
+      "name": "csfr",
+      "fn": "output = [input.app, 'use', input.express.csrf()]\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "app": {
+            "type": "object",
+            "title": "App",
+            "readonly": "true"
+          },
+          "express": {
+            "type": "object",
+            "title": "Express",
+            "readonly": "true"
+          },
+          "path": {
+            "type": "string",
+            "title": "Path"
+          },
+          "options": {
+            "type": "object",
+            "title": "Options",
+            "properties": {
+              "hidden": {
+                "type": "boolean",
+                "title": "Hidden",
+                "default": false
+              },
+              "icons": {
+                "type": "boolean",
+                "title": "Icons",
+                "default": false
+              },
+              "filter": {
+                "type": "function",
+                "title": "Icons",
+                "default": false
+              }
+            }
+          }
+        },
+        "output": {}
+      },
+      "description": "Express directory serving middleware",
+      "ns": "express",
+      "name": "directory",
+      "fn": "output = [input.app, 'use', input.express.directory(input.path, input.options)]\n"
     },
     {
       "ports": {
@@ -167,6 +318,48 @@
       "ns": "express",
       "name": "listen",
       "fn": "output = { server: input.app.listen(input.port) }\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "app": {
+            "type": "object",
+            "title": "App",
+            "readonly": "true"
+          },
+          "express": {
+            "type": "object",
+            "title": "Express",
+            "readonly": "true"
+          }
+        },
+        "output": {}
+      },
+      "description": "Express Logger",
+      "ns": "express",
+      "name": "logger",
+      "fn": "output = [input.app, 'use', input.express.logger()]\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "app": {
+            "type": "object",
+            "title": "App",
+            "readonly": "true"
+          },
+          "express": {
+            "type": "object",
+            "title": "Express",
+            "readonly": "true"
+          }
+        },
+        "output": {}
+      },
+      "description": "Express Method Override",
+      "ns": "express",
+      "name": "methodOverride",
+      "fn": "output = [input.app, 'use', input.express.methodOverride()]\n"
     },
     {
       "ports": {

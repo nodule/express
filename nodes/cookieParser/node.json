@@ -1,0 +1,20 @@
+{
+  "name": "cookieParser",
+  "ns": "express",
+  "description": "Express Cookie Parser",
+  "ports": {
+    "input": {
+      "app": {
+        "type": "object",
+        "title": "App",
+        "readonly": "true"
+      },
+      "express": {
+        "type": "object",
+        "title": "Express",
+        "readonly": "true"
+      }
+    },
+    "output": { }
+  }
+}

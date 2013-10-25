@@ -1,0 +1,20 @@
+{
+  "name": "compress",
+  "ns": "express",
+  "description": "Express Compress",
+  "ports": {
+    "input": {
+      "app": {
+        "type": "object",
+        "title": "App",
+        "readonly": "true"
+      },
+      "express": {
+        "type": "object",
+        "title": "Express",
+        "readonly": "true"
+      }
+    },
+    "output": { }
+  }
+}
