@@ -296,6 +296,27 @@
       "ports": {
         "input": {
           "app": {
+            "type": "object",
+            "title": "App",
+            "readonly": "true"
+          },
+          "express": {
+            "type": "object",
+            "title": "Express",
+            "readonly": "true"
+          }
+        },
+        "output": {}
+      },
+      "description": "Express JSON middleware",
+      "ns": "express",
+      "name": "json",
+      "fn": "output = [input.app, 'use', input.express.json()]\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "app": {
             "type": "function",
             "title": "Express app",
             "readonly": true,
@@ -365,6 +386,27 @@
       "ports": {
         "input": {
           "app": {
+            "type": "object",
+            "title": "App",
+            "readonly": "true"
+          },
+          "express": {
+            "type": "object",
+            "title": "Express",
+            "readonly": "true"
+          }
+        },
+        "output": {}
+      },
+      "description": "Express multipart",
+      "ns": "express",
+      "name": "multipart",
+      "fn": "output = [input.app, 'use', input.express.multipart()]\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "app": {
             "type": "function",
             "title": "Express app",
             "required": true,
@@ -413,6 +455,27 @@
       "ns": "express",
       "name": "send",
       "fn": "input.res.send(input.body)"
+    },
+    {
+      "ports": {
+        "input": {
+          "app": {
+            "type": "object",
+            "title": "App",
+            "readonly": "true"
+          },
+          "express": {
+            "type": "object",
+            "title": "Express",
+            "readonly": "true"
+          }
+        },
+        "output": {}
+      },
+      "description": "Express urlencoded",
+      "ns": "express",
+      "name": "urlencoded",
+      "fn": "output = [input.app, 'use', input.express.urlencoded()]\n"
     }
   ],
   "twigs": [

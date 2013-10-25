@@ -1,0 +1,20 @@
+{
+  "name": "json",
+  "ns": "express",
+  "description": "Express JSON middleware",
+  "ports": {
+    "input": {
+      "app": {
+        "type": "object",
+        "title": "App",
+        "readonly": "true"
+      },
+      "express": {
+        "type": "object",
+        "title": "Express",
+        "readonly": "true"
+      }
+    },
+    "output": { }
+  }
+}
