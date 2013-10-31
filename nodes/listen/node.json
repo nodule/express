@@ -2,6 +2,9 @@
   "name": "listen",
   "ns": "express",
   "description": "express listen",
+  "phrases": {
+    "active": "listening on port {{input.port}}, ?address?"
+  },
   "ports": {
     "input": {
       "app": {

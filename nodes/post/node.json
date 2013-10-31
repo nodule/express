@@ -2,6 +2,9 @@
   "name": "post",
   "ns": "express",
   "description": "express post",
+  "phrases": {
+    "active": "Adding router path {{input.path}} for POST requests."
+  },
   "ports": {
     "input": {
       "app": {

@@ -2,6 +2,9 @@
   "name": "bodyParser",
   "ns": "express",
   "description": "Express Body Parser",
+  "phrases": {
+    "active": "Adding Express Body Parser Middleware"
+  },
   "ports": {
     "input": {
       "app": {

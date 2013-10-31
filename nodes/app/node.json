@@ -2,6 +2,9 @@
   "name": "app",
   "ns": "express",
   "description": "express app",
+  "phrases": {
+    "active": "Creating Express app"
+  },
   "require": {
     "express": "3.x.x"
   },

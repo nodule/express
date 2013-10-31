@@ -2,6 +2,9 @@
   "name": "directory",
   "ns": "express",
   "description": "Express directory serving middleware",
+  "phrases": {
+    "active": "Using Express directory serving middleware"
+  },
   "ports": {
     "input": {
       "app": {

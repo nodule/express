@@ -2,6 +2,9 @@
   "name": "error",
   "ns": "express",
   "description": "express error",
+  "phrases": {
+    "active": "Sending Express error"
+  },
   "ports": {
     "input": {
       "app": {

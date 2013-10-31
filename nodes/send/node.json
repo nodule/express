@@ -2,6 +2,9 @@
   "name": "send",
   "ns": "express",
   "description": "express send string",
+  "phrases": {
+    "active": "Sending response body"
+  },
   "ports": {
     "input": {
       "res": {

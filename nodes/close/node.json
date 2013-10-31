@@ -2,6 +2,9 @@
   "name": "close",
   "ns": "express",
   "description": "Close server (todo: can close any server connection, not just express)",
+  "phrases": {
+    "active": "Closing server"
+  },
   "ports": {
     "input": {
       "server": {

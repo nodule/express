@@ -2,6 +2,9 @@
   "name": "csfr",
   "ns": "express",
   "description": "Express CSRF protection middleware",
+  "phrases": {
+    "active": "Using Express Cross-site request forgery protection middleware"
+  },
   "ports": {
     "input": {
       "app": {

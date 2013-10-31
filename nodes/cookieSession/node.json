@@ -2,6 +2,9 @@
   "name": "cookieSession",
   "ns": "express",
   "description": "Express Cookie Session",
+  "phrases": {
+    "active": "Using Express Cookie Session middleware"
+  },
   "ports": {
     "input": {
       "app": {

@@ -2,6 +2,9 @@
   "name": "json",
   "ns": "express",
   "description": "Express JSON middleware",
+  "phrases": {
+    "active": "Using Express JSON middleware"
+  },
   "ports": {
     "input": {
       "app": {

@@ -2,6 +2,9 @@
   "name": "compress",
   "ns": "express",
   "description": "Express Compress",
+  "phrases": {
+    "active": "Using Express Compress Middleware"
+  },
   "ports": {
     "input": {
       "app": {

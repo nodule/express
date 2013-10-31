@@ -2,6 +2,9 @@
   "name": "500",
   "ns": "express",
   "description": "500 error",
+  "phrases": {
+    "active": "Sending 500 error message"
+  },
   "ports": {
     "input": {
       "error": {

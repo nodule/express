@@ -2,6 +2,9 @@
   "name": "cookieParser",
   "ns": "express",
   "description": "Express Cookie Parser",
+  "phrases": {
+    "active": "Using Express Cookie Parser middleware"
+  },
   "ports": {
     "input": {
       "app": {

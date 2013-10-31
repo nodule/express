@@ -2,6 +2,9 @@
   "name": "methodOverride",
   "ns": "express",
   "description": "Express Method Override",
+  "phrases": {
+    "active": "Using Method Override Middleware"
+  },
   "ports": {
     "input": {
       "app": {

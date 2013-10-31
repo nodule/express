@@ -2,6 +2,9 @@
   "name": "get",
   "ns": "express",
   "description": "express get",
+  "phrases": {
+    "active": "Creating router path {{input.path}} for get requests."
+  },
   "ports": {
     "input": {
       "app": {
