@@ -5,7 +5,6 @@
   "phrases": {
     "active": "listening on port {{input.port}}, ?address?"
   },
-  "expose": [ "process" ],
   "ports": {
     "input": {
       "app": {
