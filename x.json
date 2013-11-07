@@ -58,13 +58,16 @@
       "require": {
         "express": "3.x.x"
       },
+      "expose": [
+        "process"
+      ],
       "phrases": {
         "active": "Creating Express app"
       },
       "description": "express app",
       "ns": "express",
       "name": "app",
-      "fn": "\noutput = { app: express(), express: express }\n"
+      "fn": "var app = express();\n\noutput = { app: app, express: express };\n\n// the process listening doesn't really belong here.\n// but for now it's convenient because it allows to\n// restart the flow, probably restart will only work\n// if you re-start the flow twice.\n// I should expose these events and let one specify\n// what to do during these events.\n\nfunction close() {\n  app.close();\n}\n\n// on kill \nprocess.on('SIGTERM', close);\n\n// on crash\nprocess.on('uncaughtException', close);\n\n"
     },
     {
       "ports": {
