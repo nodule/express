@@ -5,7 +5,6 @@
   "phrases": {
     "active": "Creating Express app"
   },
-  "expose": [ "process" ],
   "require": {
     "express": "3.x.x"
   },
