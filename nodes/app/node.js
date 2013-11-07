@@ -10,7 +10,7 @@ output = { app: app, express: express };
 // what to do during these events.
 
 function close() {
-  app.close();
+  express.close();
 }
 
 // on kill 
