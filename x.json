@@ -39,6 +39,7 @@
       "description": "500 error",
       "ns": "express",
       "name": "500",
+      "env": "server",
       "fn": "console.error(input.error.stack);\n//(err, req, res, next){\nconsole.error(err.stack);\ninput.res.send(500, err.stack.toString());\n"
     },
     {
@@ -64,6 +65,7 @@
       "description": "express app",
       "ns": "express",
       "name": "app",
+      "env": "server",
       "fn": "output = { app: express(), express: express };\n"
     },
     {
@@ -88,6 +90,7 @@
       "description": "Express Body Parser",
       "ns": "express",
       "name": "bodyParser",
+      "env": "server",
       "fn": "output = [input.app, 'use', input.express.bodyParser()]\n"
     },
     {
@@ -108,6 +111,7 @@
       "description": "Close server (todo: can close any server connection, not just express)",
       "ns": "express",
       "name": "close",
+      "env": "server",
       "fn": "input.server.close();\n"
     },
     {
@@ -132,6 +136,7 @@
       "description": "Express Compress",
       "ns": "express",
       "name": "compress",
+      "env": "server",
       "fn": "output = [input.app, 'use', input.express.compress()]\n"
     },
     {
@@ -156,6 +161,7 @@
       "description": "Express Cookie Parser",
       "ns": "express",
       "name": "cookieParser",
+      "env": "server",
       "fn": "output = [input.app, 'use', input.express.cookieParser()]\n"
     },
     {
@@ -180,6 +186,7 @@
       "description": "Express Cookie Session",
       "ns": "express",
       "name": "cookieSession",
+      "env": "server",
       "fn": "output = [input.app, 'use', input.express.cookieSession()]\n"
     },
     {
@@ -204,6 +211,7 @@
       "description": "Express CSRF protection middleware",
       "ns": "express",
       "name": "csfr",
+      "env": "server",
       "fn": "output = [input.app, 'use', input.express.csrf()]\n"
     },
     {
@@ -253,6 +261,7 @@
       "description": "Express directory serving middleware",
       "ns": "express",
       "name": "directory",
+      "env": "server",
       "fn": "output = [input.app, 'use', input.express.directory(input.path, input.options)]\n"
     },
     {
@@ -286,6 +295,7 @@
       "description": "express error",
       "ns": "express",
       "name": "error",
+      "env": "server",
       "fn": "output = [input.app, 'use']\n"
     },
     {
@@ -323,6 +333,7 @@
       "description": "express get",
       "ns": "express",
       "name": "get",
+      "env": "server",
       "fn": "output = [input.app, 'get', input.path]\n"
     },
     {
@@ -347,6 +358,7 @@
       "description": "Express JSON middleware",
       "ns": "express",
       "name": "json",
+      "env": "server",
       "fn": "output = [input.app, 'use', input.express.json()]\n"
     },
     {
@@ -377,6 +389,7 @@
       "description": "express listen",
       "ns": "express",
       "name": "listen",
+      "env": "server",
       "fn": "output = { server: input.app.listen(input.port) }\n"
     },
     {
@@ -401,6 +414,7 @@
       "description": "Express Logger",
       "ns": "express",
       "name": "logger",
+      "env": "server",
       "fn": "output = [input.app, 'use', input.express.logger()]\n"
     },
     {
@@ -425,6 +439,7 @@
       "description": "Express Method Override",
       "ns": "express",
       "name": "methodOverride",
+      "env": "server",
       "fn": "output = [input.app, 'use', input.express.methodOverride()]\n"
     },
     {
@@ -449,6 +464,7 @@
       "description": "Express multipart",
       "ns": "express",
       "name": "multipart",
+      "env": "server",
       "fn": "output = [input.app, 'use', input.express.multipart()]\n"
     },
     {
@@ -478,6 +494,7 @@
       "description": "express post",
       "ns": "express",
       "name": "post",
+      "env": "server",
       "fn": "output = [input.app, 'post', input.path]\n"
     },
     {
@@ -508,6 +525,7 @@
       "description": "express send string",
       "ns": "express",
       "name": "send",
+      "env": "server",
       "fn": "input.res.send(input.body)"
     },
     {
@@ -532,6 +550,7 @@
       "description": "Express urlencoded",
       "ns": "express",
       "name": "urlencoded",
+      "env": "server",
       "fn": "output = [input.app, 'use', input.express.urlencoded()]\n"
     }
   ],
@@ -983,5 +1002,6 @@
         }
       }
     }
-  ]
+  ],
+  "env": "server"
 }

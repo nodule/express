@@ -23,6 +23,7 @@
   },
   "chix": {
     "name": "express",
+    "env": "server",
     "color": "rgb(35,136,35)"
   }
 }
