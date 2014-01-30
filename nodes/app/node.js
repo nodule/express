@@ -1,1 +1,4 @@
-output = { app: express(), express: express };
+output = {
+  app: express(),
+  express: express
+};
