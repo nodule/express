@@ -37,6 +37,7 @@
         "active": "Sending 500 error message"
       },
       "description": "500 error",
+      "title": "500",
       "ns": "express",
       "name": "500",
       "env": "server",
@@ -63,10 +64,11 @@
         "active": "Creating Express app"
       },
       "description": "express app",
+      "title": "App",
       "ns": "express",
       "name": "app",
       "env": "server",
-      "fn": "output = { app: express(), express: express };\n"
+      "fn": "output = {\n  app: express(),\n  express: express\n};\n"
     },
     {
       "ports": {
@@ -88,6 +90,7 @@
         "active": "Adding Express Body Parser Middleware"
       },
       "description": "Express Body Parser",
+      "title": "Body Parser",
       "ns": "express",
       "name": "bodyParser",
       "env": "server",
@@ -109,6 +112,7 @@
         "active": "Closing server"
       },
       "description": "Close server (todo: can close any server connection, not just express)",
+      "title": "Close",
       "ns": "express",
       "name": "close",
       "env": "server",
@@ -134,6 +138,7 @@
         "active": "Using Express Compress Middleware"
       },
       "description": "Express Compress",
+      "title": "Compress",
       "ns": "express",
       "name": "compress",
       "env": "server",
@@ -159,6 +164,7 @@
         "active": "Using Express Cookie Parser middleware"
       },
       "description": "Express Cookie Parser",
+      "title": "Cookie Parser",
       "ns": "express",
       "name": "cookieParser",
       "env": "server",
@@ -184,6 +190,7 @@
         "active": "Using Express Cookie Session middleware"
       },
       "description": "Express Cookie Session",
+      "title": "Cookie Session",
       "ns": "express",
       "name": "cookieSession",
       "env": "server",
@@ -209,6 +216,7 @@
         "active": "Using Express Cross-site request forgery protection middleware"
       },
       "description": "Express CSRF protection middleware",
+      "title": "csfr",
       "ns": "express",
       "name": "csfr",
       "env": "server",
@@ -259,6 +267,7 @@
         "active": "Using Express directory serving middleware"
       },
       "description": "Express directory serving middleware",
+      "title": "Directory",
       "ns": "express",
       "name": "directory",
       "env": "server",
@@ -293,6 +302,7 @@
         "active": "Sending Express error"
       },
       "description": "express error",
+      "title": "Error",
       "ns": "express",
       "name": "error",
       "env": "server",
@@ -331,6 +341,7 @@
         "active": "Creating router path {{input.path}} for get requests."
       },
       "description": "express get",
+      "title": "GET",
       "ns": "express",
       "name": "get",
       "env": "server",
@@ -356,6 +367,7 @@
         "active": "Using Express JSON middleware"
       },
       "description": "Express JSON middleware",
+      "title": "JSON",
       "ns": "express",
       "name": "json",
       "env": "server",
@@ -387,10 +399,11 @@
         "active": "listening on port {{input.port}}, ?address?"
       },
       "description": "express listen",
+      "title": "Listen",
       "ns": "express",
       "name": "listen",
       "env": "server",
-      "fn": "output = { server: input.app.listen(input.port) }\n"
+      "fn": "output = {\n  server: input.app.listen(input.port)\n}\n"
     },
     {
       "ports": {
@@ -412,6 +425,7 @@
         "active": "Using Logger middleware"
       },
       "description": "Express Logger",
+      "title": "Logger",
       "ns": "express",
       "name": "logger",
       "env": "server",
@@ -437,6 +451,7 @@
         "active": "Using Method Override Middleware"
       },
       "description": "Express Method Override",
+      "title": "Method Override",
       "ns": "express",
       "name": "methodOverride",
       "env": "server",
@@ -462,6 +477,7 @@
         "active": "Using Multipart Middleware"
       },
       "description": "Express multipart",
+      "title": "Multipart",
       "ns": "express",
       "name": "multipart",
       "env": "server",
@@ -492,6 +508,7 @@
         "active": "Adding router path {{input.path}} for POST requests."
       },
       "description": "express post",
+      "title": "Post",
       "ns": "express",
       "name": "post",
       "env": "server",
@@ -523,10 +540,11 @@
         "active": "Sending response body"
       },
       "description": "express send string",
+      "title": "Send",
       "ns": "express",
       "name": "send",
       "env": "server",
-      "fn": "input.res.send(input.body)"
+      "fn": "input.res.send(input.body)\n"
     },
     {
       "ports": {
@@ -548,6 +566,7 @@
         "active": "Using urlencoded middleware"
       },
       "description": "Express urlencoded",
+      "title": "Urlencoded",
       "ns": "express",
       "name": "urlencoded",
       "env": "server",
