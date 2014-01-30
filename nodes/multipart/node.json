@@ -1,6 +1,7 @@
 {
   "name": "multipart",
   "ns": "express",
+  "title": "Multipart",
   "description": "Express multipart",
   "phrases": {
     "active": "Using Multipart Middleware"

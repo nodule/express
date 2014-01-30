@@ -1,6 +1,7 @@
 {
   "name": "logger",
   "ns": "express",
+  "title": "Logger",
   "description": "Express Logger",
   "phrases": {
     "active": "Using Logger middleware"

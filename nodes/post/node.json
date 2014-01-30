@@ -1,6 +1,7 @@
 {
   "name": "post",
   "ns": "express",
+  "title": "Post",
   "description": "express post",
   "phrases": {
     "active": "Adding router path {{input.path}} for POST requests."

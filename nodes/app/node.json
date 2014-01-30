@@ -1,6 +1,7 @@
 {
   "name": "app",
   "ns": "express",
+  "title": "App",
   "description": "express app",
   "phrases": {
     "active": "Creating Express app"

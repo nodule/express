@@ -1,6 +1,7 @@
 {
   "name": "methodOverride",
   "ns": "express",
+  "title": "Method Override",
   "description": "Express Method Override",
   "phrases": {
     "active": "Using Method Override Middleware"

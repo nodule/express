@@ -1,6 +1,7 @@
 {
   "name": "compress",
   "ns": "express",
+  "title": "Compress",
   "description": "Express Compress",
   "phrases": {
     "active": "Using Express Compress Middleware"

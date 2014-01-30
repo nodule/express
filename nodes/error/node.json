@@ -1,6 +1,7 @@
 {
   "name": "error",
   "ns": "express",
+  "title": "Error",
   "description": "express error",
   "phrases": {
     "active": "Sending Express error"

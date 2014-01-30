@@ -1,6 +1,7 @@
 {
   "name": "directory",
   "ns": "express",
+  "title": "Directory",
   "description": "Express directory serving middleware",
   "phrases": {
     "active": "Using Express directory serving middleware"

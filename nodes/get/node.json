@@ -1,6 +1,7 @@
 {
   "name": "get",
   "ns": "express",
+  "title": "GET",
   "description": "express get",
   "phrases": {
     "active": "Creating router path {{input.path}} for get requests."

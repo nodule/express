@@ -1,6 +1,7 @@
 {
   "name": "urlencoded",
   "ns": "express",
+  "title": "Urlencoded",
   "description": "Express urlencoded",
   "phrases": {
     "active": "Using urlencoded middleware"

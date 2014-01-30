@@ -1,6 +1,7 @@
 {
   "name": "bodyParser",
   "ns": "express",
+  "title": "Body Parser",
   "description": "Express Body Parser",
   "phrases": {
     "active": "Adding Express Body Parser Middleware"

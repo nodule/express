@@ -1,6 +1,7 @@
 {
   "name": "close",
   "ns": "express",
+  "title": "Close",
   "description": "Close server (todo: can close any server connection, not just express)",
   "phrases": {
     "active": "Closing server"

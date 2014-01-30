@@ -1,6 +1,7 @@
 {
   "name": "cookieParser",
   "ns": "express",
+  "title": "Cookie Parser",
   "description": "Express Cookie Parser",
   "phrases": {
     "active": "Using Express Cookie Parser middleware"

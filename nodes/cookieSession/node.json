@@ -1,6 +1,7 @@
 {
   "name": "cookieSession",
   "ns": "express",
+  "title": "Cookie Session",
   "description": "Express Cookie Session",
   "phrases": {
     "active": "Using Express Cookie Session middleware"

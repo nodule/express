@@ -1,6 +1,7 @@
 {
   "name": "json",
   "ns": "express",
+  "title": "JSON",
   "description": "Express JSON middleware",
   "phrases": {
     "active": "Using Express JSON middleware"

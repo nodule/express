@@ -1,6 +1,7 @@
 {
   "name": "send",
   "ns": "express",
+  "title": "Send",
   "description": "express send string",
   "phrases": {
     "active": "Sending response body"

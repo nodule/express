@@ -1,6 +1,7 @@
 {
   "name": "500",
   "ns": "express",
+  "title": "500",
   "description": "500 error",
   "phrases": {
     "active": "Sending 500 error message"

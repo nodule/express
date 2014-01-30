@@ -1,6 +1,7 @@
 {
   "name": "listen",
   "ns": "express",
+  "title": "Listen",
   "description": "express listen",
   "phrases": {
     "active": "listening on port {{input.port}}, ?address?"
