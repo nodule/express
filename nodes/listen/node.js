@@ -1,1 +1,3 @@
-output = { server: input.app.listen(input.port) }
+output = {
+  server: input.app.listen(input.port)
+}
