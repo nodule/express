@@ -74,12 +74,12 @@
       "ports": {
         "input": {
           "app": {
-            "type": "object",
+            "type": "function",
             "title": "App",
             "readonly": "true"
           },
           "express": {
-            "type": "object",
+            "type": "function",
             "title": "Express",
             "readonly": "true"
           }
@@ -100,7 +100,7 @@
       "ports": {
         "input": {
           "server": {
-            "type": "object",
+            "type": "function",
             "title": "HTTP Server",
             "readonly": true,
             "required": true
@@ -122,12 +122,12 @@
       "ports": {
         "input": {
           "app": {
-            "type": "object",
+            "type": "function",
             "title": "App",
             "readonly": "true"
           },
           "express": {
-            "type": "object",
+            "type": "function",
             "title": "Express",
             "readonly": "true"
           }
@@ -148,12 +148,12 @@
       "ports": {
         "input": {
           "app": {
-            "type": "object",
+            "type": "function",
             "title": "App",
             "readonly": "true"
           },
           "express": {
-            "type": "object",
+            "type": "function",
             "title": "Express",
             "readonly": "true"
           }
@@ -174,12 +174,12 @@
       "ports": {
         "input": {
           "app": {
-            "type": "object",
+            "type": "function",
             "title": "App",
             "readonly": "true"
           },
           "express": {
-            "type": "object",
+            "type": "function",
             "title": "Express",
             "readonly": "true"
           }
@@ -200,12 +200,12 @@
       "ports": {
         "input": {
           "app": {
-            "type": "object",
+            "type": "function",
             "title": "App",
             "readonly": "true"
           },
           "express": {
-            "type": "object",
+            "type": "function",
             "title": "Express",
             "readonly": "true"
           }
@@ -226,12 +226,12 @@
       "ports": {
         "input": {
           "app": {
-            "type": "object",
+            "type": "function",
             "title": "App",
             "readonly": "true"
           },
           "express": {
-            "type": "object",
+            "type": "function",
             "title": "Express",
             "readonly": "true"
           },
@@ -239,26 +239,20 @@
             "type": "string",
             "title": "Path"
           },
-          "options": {
-            "type": "object",
-            "title": "Options",
-            "properties": {
-              "hidden": {
-                "type": "boolean",
-                "title": "Hidden",
-                "default": false
-              },
-              "icons": {
-                "type": "boolean",
-                "title": "Icons",
-                "default": false
-              },
-              "filter": {
-                "type": "function",
-                "title": "Icons",
-                "default": false
-              }
-            }
+          "hidden": {
+            "type": "boolean",
+            "title": "Hidden",
+            "default": false
+          },
+          "icons": {
+            "type": "boolean",
+            "title": "Icons",
+            "default": false
+          },
+          "filter": {
+            "type": "function",
+            "title": "Filter",
+            "default": null
           }
         },
         "output": {}
@@ -271,7 +265,7 @@
       "ns": "express",
       "name": "directory",
       "env": "server",
-      "fn": "output = [input.app, 'use', input.express.directory(input.path, input.options)]\n"
+      "fn": "output = [input.app, 'use', input.express.directory(input.path, {\n  hidden: input.hidden,\n  icons: input.icons,\n  filter: input.filter\n})];\n"
     },
     {
       "ports": {
@@ -351,12 +345,12 @@
       "ports": {
         "input": {
           "app": {
-            "type": "object",
+            "type": "function",
             "title": "App",
             "readonly": "true"
           },
           "express": {
-            "type": "object",
+            "type": "function",
             "title": "Express",
             "readonly": "true"
           }
@@ -409,12 +403,12 @@
       "ports": {
         "input": {
           "app": {
-            "type": "object",
+            "type": "function",
             "title": "App",
             "readonly": "true"
           },
           "express": {
-            "type": "object",
+            "type": "function",
             "title": "Express",
             "readonly": "true"
           }
@@ -435,12 +429,12 @@
       "ports": {
         "input": {
           "app": {
-            "type": "object",
+            "type": "function",
             "title": "App",
             "readonly": "true"
           },
           "express": {
-            "type": "object",
+            "type": "function",
             "title": "Express",
             "readonly": "true"
           }
@@ -461,12 +455,12 @@
       "ports": {
         "input": {
           "app": {
-            "type": "object",
+            "type": "function",
             "title": "App",
             "readonly": "true"
           },
           "express": {
-            "type": "object",
+            "type": "function",
             "title": "Express",
             "readonly": "true"
           }
@@ -529,12 +523,7 @@
             "required": "true"
           }
         },
-        "output": {
-          "event:complete": {
-            "type": "object",
-            "title": "Complete"
-          }
-        }
+        "output": {}
       },
       "phrases": {
         "active": "Sending response body"
@@ -550,12 +539,12 @@
       "ports": {
         "input": {
           "app": {
-            "type": "object",
+            "type": "function",
             "title": "App",
             "readonly": "true"
           },
           "express": {
-            "type": "object",
+            "type": "function",
             "title": "Express",
             "readonly": "true"
           }

@@ -9,7 +9,7 @@
   "ports": {
     "input": {
       "server": {
-        "type": "object",
+        "type": "function",
         "title": "HTTP Server",
         "readonly": true,
         "required": true

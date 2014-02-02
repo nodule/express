@@ -9,12 +9,12 @@
   "ports": {
     "input": {
       "app": {
-        "type": "object",
+        "type": "function",
         "title": "App",
         "readonly": "true"
       },
       "express": {
-        "type": "object",
+        "type": "function",
         "title": "Express",
         "readonly": "true"
       }

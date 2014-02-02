@@ -9,12 +9,12 @@
   "ports": {
     "input": {
       "app": {
-        "type": "object",
+        "type": "function",
         "title": "App",
         "readonly": "true"
       },
       "express": {
-        "type": "object",
+        "type": "function",
         "title": "Express",
         "readonly": "true"
       },
@@ -22,26 +22,20 @@
         "type": "string",
         "title": "Path"
       },
-      "options": {
-        "type": "object",
-        "title": "Options",
-        "properties": {
-          "hidden": {
-            "type": "boolean",
-            "title": "Hidden",
-            "default": false
-          },
-          "icons": {
-            "type": "boolean",
-            "title": "Icons",
-            "default": false
-          },
-          "filter": {
-            "type": "function",
-            "title": "Icons",
-            "default": false
-          }
-        }
+      "hidden": {
+        "type": "boolean",
+        "title": "Hidden",
+        "default": false
+      },
+      "icons": {
+        "type": "boolean",
+        "title": "Icons",
+        "default": false
+      },
+      "filter": {
+        "type": "function",
+        "title": "Filter",
+        "default": null
       }
     },
     "output": {
