@@ -24,10 +24,10 @@
     },
     "output": {
       "req": {
-        "type": "object"
+        "type": "function"
       },
       "res": {
-        "type": "object"
+        "type": "function"
       },
       "next": {
         "type": "function"

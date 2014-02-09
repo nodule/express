@@ -23,7 +23,7 @@
     },
     "output": {
       "server": {
-        "type": "object"
+        "type": "function"
       }
     }
   }
