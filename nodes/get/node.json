@@ -24,10 +24,10 @@
     },
     "output": {
       "req": {
-        "type": "function"
+        "type": "Stream"
       },
       "res": {
-        "type": "function"
+        "type": "Stream"
       },
       "next": {
         "type": "function"

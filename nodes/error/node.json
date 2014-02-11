@@ -20,10 +20,10 @@
         "type": "object"
       },
       "req": {
-        "type": "object"
+        "type": "Stream"
       },
       "res": {
-        "type": "object"
+        "type": "Stream"
       },
       "next": {
         "type": "function"

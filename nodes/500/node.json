@@ -13,11 +13,11 @@
         "title": "Error message"
       },
       "req": {
-        "type": "object",
+        "type": "Stream",
         "title": "Express request object"
       },
       "res": {
-        "type": "object",
+        "type": "Stream",
         "title": "Express response object"
       },
       "next": {
