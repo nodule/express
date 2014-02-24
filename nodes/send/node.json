@@ -9,7 +9,7 @@
   "ports": {
     "input": {
       "res": {
-        "type": "function",
+        "type": "Stream",
         "title": "Express response object",
         "required": "true",
         "readonly": "true"
