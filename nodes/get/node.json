@@ -29,6 +29,15 @@
       "res": {
         "type": "Stream"
       },
+      "body": {
+        "type": "string"
+      },
+      "params": {
+        "type": "object"
+      },
+      "headers": {
+        "type": "object"
+      },
       "next": {
         "type": "function"
       }
