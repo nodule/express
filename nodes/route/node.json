@@ -1,0 +1,34 @@
+{
+  "name": "route",
+  "ns": "express",
+  "title": "Router",
+  "description": "express route",
+  "phrases": {
+    "active": "Adding router path {{input.path}} for {{input.type}} requests."
+  },
+  "ports": {
+    "input": {
+      "app": {
+        "type": "function",
+        "title": "Express app",
+        "required": true,
+        "readonly": true
+      },
+      "path": {
+        "type": "string",
+        "title": "Router path",
+        "required": true
+      },
+      "type": {
+        "enum": ["get","post","put","delete","options","head","patch"],
+        "title": "Type",
+        "required": true
+      }
+    },
+    "output": {
+      "output": {
+        "type": "object"
+      }
+    }
+  }
+}
