@@ -21,8 +21,14 @@
       }
     },
     "output": {
-      "output": {
-        "type": "object"
+      "req": {
+        "type": "Stream"
+      },
+      "res": {
+        "type": "Stream"
+      },
+      "next": {
+        "type": "function"
       }
     }
   }
