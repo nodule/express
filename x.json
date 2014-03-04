@@ -326,15 +326,6 @@
           "res": {
             "type": "Stream"
           },
-          "body": {
-            "type": "string"
-          },
-          "params": {
-            "type": "object"
-          },
-          "headers": {
-            "type": "object"
-          },
           "next": {
             "type": "function"
           }
@@ -348,7 +339,7 @@
       "ns": "express",
       "name": "get",
       "env": "server",
-      "fn": "output = function() {\n\n  input.app.get(input.path, function(req, res) {\n\n    cb({\n      req: req,\n      res: res,\n      params: req.params,\n      headers: req.headers,\n      body: req.body\n    });\n\n    done();\n\n  });\n\n};\n"
+      "fn": "output = [input.app, 'get', input.path]\n"
     },
     {
       "ports": {
