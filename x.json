@@ -385,6 +385,45 @@
         "input": {
           "app": {
             "type": "function",
+            "title": "Express app",
+            "readonly": true,
+            "required": true
+          },
+          "path": {
+            "type": "string",
+            "default": "/",
+            "title": "A router path",
+            "description": "Regular expressions may also be used, and can be useful if you have very specific restraints",
+            "required": true
+          }
+        },
+        "output": {
+          "req": {
+            "type": "Stream"
+          },
+          "res": {
+            "type": "Stream"
+          },
+          "next": {
+            "type": "function"
+          }
+        }
+      },
+      "phrases": {
+        "active": "Creating router path {{input.path}} for HEAD requests."
+      },
+      "description": "express head",
+      "title": "HEAD",
+      "ns": "express",
+      "name": "head",
+      "env": "server",
+      "fn": "output = [input.app, 'head', input.path]\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "app": {
+            "type": "function",
             "title": "App",
             "readonly": "true"
           },
@@ -546,6 +585,45 @@
       "name": "options",
       "env": "server",
       "fn": "output = [input.app, 'options', input.path]\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "app": {
+            "type": "function",
+            "title": "Express app",
+            "readonly": true,
+            "required": true
+          },
+          "path": {
+            "type": "string",
+            "default": "/",
+            "title": "A router path",
+            "description": "Regular expressions may also be used, and can be useful if you have very specific restraints",
+            "required": true
+          }
+        },
+        "output": {
+          "req": {
+            "type": "Stream"
+          },
+          "res": {
+            "type": "Stream"
+          },
+          "next": {
+            "type": "function"
+          }
+        }
+      },
+      "phrases": {
+        "active": "Creating router path {{input.path}} for PATCH requests."
+      },
+      "description": "express patch",
+      "title": "PATCH",
+      "ns": "express",
+      "name": "patch",
+      "env": "server",
+      "fn": "output = [input.app, 'patch', input.path]\n"
     },
     {
       "ports": {
