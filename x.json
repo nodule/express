@@ -227,6 +227,45 @@
         "input": {
           "app": {
             "type": "function",
+            "title": "Express app",
+            "readonly": true,
+            "required": true
+          },
+          "path": {
+            "type": "string",
+            "default": "/",
+            "title": "A router path",
+            "description": "Regular expressions may also be used, and can be useful if you have very specific restraints",
+            "required": true
+          }
+        },
+        "output": {
+          "req": {
+            "type": "Stream"
+          },
+          "res": {
+            "type": "Stream"
+          },
+          "next": {
+            "type": "function"
+          }
+        }
+      },
+      "phrases": {
+        "active": "Creating router path {{input.path}} for delete requests."
+      },
+      "description": "express delete",
+      "title": "DELETE",
+      "ns": "express",
+      "name": "delete",
+      "env": "server",
+      "fn": "output = [input.app, 'delete', input.path]\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "app": {
+            "type": "function",
             "title": "App",
             "readonly": "true"
           },
@@ -499,6 +538,37 @@
         }
       },
       "phrases": {
+        "active": "Adding router path {{input.path}} for OPTIONS requests."
+      },
+      "description": "express options",
+      "title": "Post",
+      "ns": "express",
+      "name": "options",
+      "env": "server",
+      "fn": "output = [input.app, 'options', input.path]\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "app": {
+            "type": "function",
+            "title": "Express app",
+            "required": true,
+            "readonly": true
+          },
+          "path": {
+            "type": "string",
+            "title": "Router path",
+            "required": true
+          }
+        },
+        "output": {
+          "output": {
+            "type": "object"
+          }
+        }
+      },
+      "phrases": {
         "active": "Adding router path {{input.path}} for POST requests."
       },
       "description": "express post",
@@ -507,6 +577,45 @@
       "name": "post",
       "env": "server",
       "fn": "output = [input.app, 'post', input.path]\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "app": {
+            "type": "function",
+            "title": "Express app",
+            "readonly": true,
+            "required": true
+          },
+          "path": {
+            "type": "string",
+            "default": "/",
+            "title": "A router path",
+            "description": "Regular expressions may also be used, and can be useful if you have very specific restraints",
+            "required": true
+          }
+        },
+        "output": {
+          "req": {
+            "type": "Stream"
+          },
+          "res": {
+            "type": "Stream"
+          },
+          "next": {
+            "type": "function"
+          }
+        }
+      },
+      "phrases": {
+        "active": "Creating router path {{input.path}} for put requests."
+      },
+      "description": "express put",
+      "title": "PUT",
+      "ns": "express",
+      "name": "put",
+      "env": "server",
+      "fn": "output = [input.app, 'put', input.path]\n"
     },
     {
       "ports": {
