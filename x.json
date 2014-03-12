@@ -7,7 +7,8 @@
     "url": "https://github.com/nodule/express.git"
   },
   "dependencies": {
-    "express": "latest"
+    "express": "latest",
+    "cors": "2.x.x"
   },
   "nodes": [
     {
@@ -195,6 +196,60 @@
       "name": "cookieSession",
       "env": "server",
       "fn": "output = [input.app, 'use', input.express.cookieSession()]\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "app": {
+            "type": "function",
+            "title": "App",
+            "readonly": "true"
+          },
+          "express": {
+            "type": "function",
+            "title": "Express",
+            "readonly": "true"
+          },
+          "origin": {
+            "type": "string",
+            "title": "Origin",
+            "default": null
+          },
+          "methods": {
+            "type": "array",
+            "title": "Methods",
+            "default": null
+          },
+          "allowedHeaders": {
+            "type": "array",
+            "title": "Allowed Headers",
+            "default": null
+          },
+          "credentials": {
+            "type": "boolean",
+            "title": "Credentials",
+            "default": null
+          },
+          "maxAge": {
+            "type": "number",
+            "title": "Max Age",
+            "default": null
+          }
+        },
+        "output": {}
+      },
+      "require": {
+        "cors": "2.x.x"
+      },
+      "phrases": {
+        "active": "CORS is a node.js package for providing a Connect/Express middleware that can be used to enable CORS with various options"
+      },
+      "description": "",
+      "title": "CORS",
+      "ns": "express",
+      "name": "cors",
+      "env": "server",
+      "fn": "output = [input.app, 'use', cors({\n  origin: input.origin || true,\n  methods: input.methods || undefined,\n  allowedHeaders: input.allowedHeaders || undefined,\n  exposedHeaders: input.exposedHeaders || undefined,\n  credentials: input.credentials || undefined,\n  maxAge: input.maxAge || undefined\n})]\n"
     },
     {
       "ports": {
@@ -770,7 +825,7 @@
       "ns": "express",
       "name": "send",
       "env": "server",
-      "fn": "input.res.send(input.body)\n"
+      "fn": "//input.res.send(input.body)\non.input.res = function() {\n  data.send(input.body)\n}\n"
     },
     {
       "ports": {

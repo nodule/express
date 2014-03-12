@@ -1,0 +1,52 @@
+{
+  "name": "cors",
+  "ns": "express",
+  "title": "CORS",
+  "description": "",
+  "phrases": {
+    "active": "CORS is a node.js package for providing a Connect/Express middleware that can be used to enable CORS with various options"
+  },
+  "require": {
+    "cors": "2.x.x"
+  },
+  "ports": {
+    "input": {
+      "app": {
+        "type": "function",
+        "title": "App",
+        "readonly": "true"
+      },
+      "express": {
+        "type": "function",
+        "title": "Express",
+        "readonly": "true"
+      },
+      "origin": {
+        "type": "string",
+        "title": "Origin",
+        "default": null
+      },
+      "methods": {
+        "type": "array",
+        "title": "Methods",
+        "default": null
+      },
+      "allowedHeaders": {
+        "type": "array",
+        "title": "Allowed Headers",
+        "default": null
+      },
+      "credentials": {
+        "type": "boolean",
+        "title": "Credentials",
+        "default": null
+      },
+      "maxAge": {
+        "type": "number",
+        "title": "Max Age",
+        "default": null
+      }
+    },
+    "output": { }
+  }
+}
