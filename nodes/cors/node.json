@@ -24,26 +24,37 @@
       "origin": {
         "type": "string",
         "title": "Origin",
+        "description": "Configures the Access-Control-Allow-Origin CORS header. Expects a string (ex: \"http://example.com\")",
         "default": null
       },
       "methods": {
         "type": "array",
         "title": "Methods",
+        "description": "Configures the Access-Control-Allow-Methods CORS header. (ex: ['GET', 'PUT', 'POST'])",
         "default": null
       },
       "allowedHeaders": {
         "type": "array",
         "title": "Allowed Headers",
+        "description": "Configures the Access-Control-Allow-Headers CORS header. (ex: ['Content-Type', 'Authorization]). If not specified, defaults to reflecting the headers specified in the request's Access-Control-Request-Headers header.",
+        "default": null
+      },
+      "exposedHeaders": {
+        "type": "array",
+        "title": "Exposed Headers",
+        "description": "Configures the Access-Control-Expose-Headers CORS header. (ex: ['Content-Range', 'X-Content-Range]). If not specified, no custom headers are exposed.",
         "default": null
       },
       "credentials": {
         "type": "boolean",
         "title": "Credentials",
-        "default": null
+        "description": "Configures the Access-Control-Allow-Credentials CORS header.",
+        "default": false
       },
       "maxAge": {
         "type": "number",
         "title": "Max Age",
+        "description": "Configures the Access-Control-Allow-Max-Age CORS header. Set to an integer to pass the header, otherwise it is omitted.",
         "default": null
       }
     },
