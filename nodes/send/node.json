@@ -2,6 +2,7 @@
   "name": "send",
   "ns": "express",
   "title": "Send",
+  "async": true,
   "description": "express send string",
   "phrases": {
     "active": "Sending response body"
@@ -12,6 +13,7 @@
         "type": "Stream",
         "title": "Express response object",
         "required": "true",
+        "async": true,
         "readonly": "true"
       },
       "body": {

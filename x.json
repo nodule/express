@@ -818,6 +818,7 @@
             "type": "Stream",
             "title": "Express response object",
             "required": "true",
+            "async": true,
             "readonly": "true"
           },
           "body": {
@@ -832,11 +833,12 @@
         "active": "Sending response body"
       },
       "description": "express send string",
+      "async": true,
       "title": "Send",
       "ns": "express",
       "name": "send",
       "env": "server",
-      "fn": "//input.res.send(input.body)\non.input.res = function() {\n  data.send(input.body)\n}\n"
+      "fn": "on.input.res = function() {\n  data.send(input.body)\n}\n"
     },
     {
       "ports": {
