@@ -22,6 +22,7 @@
       "type": {
         "enum": ["get","post","put","delete","options","head","patch"],
         "title": "Type",
+        "default": "get",
         "required": true
       }
     },

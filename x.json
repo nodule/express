@@ -816,6 +816,7 @@
               "patch"
             ],
             "title": "Type",
+            "default": "get",
             "required": true
           }
         },
