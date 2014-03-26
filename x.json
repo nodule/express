@@ -307,12 +307,15 @@
         },
         "output": {
           "req": {
+            "title": "Request",
             "type": "Stream"
           },
           "res": {
+            "title": "Response",
             "type": "Stream"
           },
           "next": {
+            "title": "Next",
             "type": "function"
           }
         }
@@ -384,15 +387,19 @@
         },
         "output": {
           "error": {
+            "title": "Error",
             "type": "object"
           },
           "req": {
+            "title": "Request",
             "type": "Stream"
           },
           "res": {
+            "title": "Response",
             "type": "Stream"
           },
           "next": {
+            "title": "Next",
             "type": "function"
           }
         }
@@ -426,12 +433,15 @@
         },
         "output": {
           "req": {
+            "title": "Request",
             "type": "Stream"
           },
           "res": {
+            "title": "Response",
             "type": "Stream"
           },
           "next": {
+            "title": "Next",
             "type": "function"
           }
         }
@@ -465,12 +475,15 @@
         },
         "output": {
           "req": {
+            "title": "Request",
             "type": "Stream"
           },
           "res": {
+            "title": "Response",
             "type": "Stream"
           },
           "next": {
+            "title": "Next",
             "type": "function"
           }
         }
@@ -529,6 +542,7 @@
         },
         "output": {
           "server": {
+            "title": "Server",
             "type": "function"
           }
         }
@@ -638,6 +652,7 @@
         },
         "output": {
           "output": {
+            "title": "Output",
             "type": "object"
           }
         }
@@ -671,12 +686,15 @@
         },
         "output": {
           "req": {
+            "title": "Request",
             "type": "Stream"
           },
           "res": {
+            "title": "Response",
             "type": "Stream"
           },
           "next": {
+            "title": "Next",
             "type": "function"
           }
         }
@@ -708,12 +726,15 @@
         },
         "output": {
           "req": {
+            "title": "Request",
             "type": "Stream"
           },
           "res": {
+            "title": "Response",
             "type": "Stream"
           },
           "next": {
+            "title": "Next",
             "type": "function"
           }
         }
@@ -747,12 +768,15 @@
         },
         "output": {
           "req": {
+            "title": "Request",
             "type": "Stream"
           },
           "res": {
+            "title": "Response",
             "type": "Stream"
           },
           "next": {
+            "title": "Next",
             "type": "function"
           }
         }
@@ -797,6 +821,7 @@
         },
         "output": {
           "output": {
+            "title": "Output",
             "type": "object"
           }
         }

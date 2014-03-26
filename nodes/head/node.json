@@ -24,12 +24,15 @@
     },
     "output": {
       "req": {
+        "title": "Request",
         "type": "Stream"
       },
       "res": {
+        "title": "Response",
         "type": "Stream"
       },
       "next": {
+        "title": "Next",
         "type": "function"
       }
     }

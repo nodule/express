@@ -27,6 +27,7 @@
     },
     "output": {
       "output": {
+        "title": "Output",
         "type": "object"
       }
     }
