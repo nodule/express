@@ -820,9 +820,13 @@
           }
         },
         "output": {
-          "output": {
-            "title": "Output",
-            "type": "object"
+          "req": {
+            "title": "Request",
+            "type": "Stream"
+          },
+          "res": {
+            "title": "Response",
+            "type": "Stream"
           }
         }
       },
