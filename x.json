@@ -853,6 +853,7 @@
           },
           "body": {
             "type": "string",
+            "format": "html",
             "title": "The response body",
             "required": "true"
           }
