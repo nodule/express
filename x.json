@@ -85,7 +85,14 @@
             "readonly": "true"
           }
         },
-        "output": {}
+        "output": {
+          "res": {
+            "type": "ServerResponse"
+          },
+          "type": {
+            "type": "any"
+          }
+        }
       },
       "require": {
         "body-parser": "1.x.x"
