@@ -1,1 +1,1 @@
-output = [input.app, 'use', input.express.bodyParser()]
+output = [input.app, 'use', body_parser.json()];

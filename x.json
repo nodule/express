@@ -87,6 +87,9 @@
         },
         "output": {}
       },
+      "require": {
+        "body-parser": "1.x.x"
+      },
       "phrases": {
         "active": "Adding Express Body Parser Middleware"
       },
@@ -95,7 +98,7 @@
       "ns": "express",
       "name": "bodyParser",
       "env": "server",
-      "fn": "output = [input.app, 'use', input.express.bodyParser()]\n"
+      "fn": "output = [input.app, 'use', body_parser.json()];\n"
     },
     {
       "ports": {
