@@ -45,6 +45,11 @@
       "fn": "console.error(input.error.stack);\n//(err, req, res, next){\nconsole.error(err.stack);\ninput.res.send(500, err.stack.toString());\n"
     },
     {
+      "dependencies": {
+        "npm": {
+          "express": "3.x.x"
+        }
+      },
       "ports": {
         "input": {},
         "output": {
@@ -58,9 +63,6 @@
           }
         }
       },
-      "require": {
-        "express": "3.x.x"
-      },
       "phrases": {
         "active": "Creating Express app"
       },
@@ -72,6 +74,11 @@
       "fn": "output = {\n  app: express(),\n  express: express\n};\n"
     },
     {
+      "dependencies": {
+        "npm": {
+          "body-parser": "1.x.x"
+        }
+      },
       "ports": {
         "input": {
           "app": {
@@ -93,9 +100,6 @@
             "type": "any"
           }
         }
-      },
-      "require": {
-        "body-parser": "1.x.x"
       },
       "phrases": {
         "active": "Adding Express Body Parser Middleware"
@@ -208,6 +212,11 @@
       "fn": "output = [input.app, 'use', input.express.cookieSession()]\n"
     },
     {
+      "dependencies": {
+        "npm": {
+          "cors": "2.x.x"
+        }
+      },
       "ports": {
         "input": {
           "app": {
@@ -258,9 +267,6 @@
           }
         },
         "output": {}
-      },
-      "require": {
-        "cors": "2.x.x"
       },
       "phrases": {
         "active": "CORS is a node.js package for providing a Connect/Express middleware that can be used to enable CORS with various options"

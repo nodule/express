@@ -6,9 +6,6 @@
   "phrases": {
     "active": "Adding Express Body Parser Middleware"
   },
-  "require": {
-    "body-parser": "1.x.x"
-  },
   "ports": {
     "input": {
       "app": {
@@ -29,6 +26,11 @@
       "type": {
         "type": "any"
       }
+    }
+  },
+  "dependencies": {
+    "npm": {
+      "body-parser": "1.x.x"
     }
   }
 }

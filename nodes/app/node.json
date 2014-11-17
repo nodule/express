@@ -6,11 +6,8 @@
   "phrases": {
     "active": "Creating Express app"
   },
-  "require": {
-    "express": "3.x.x"
-  },
   "ports": {
-    "input": { },
+    "input": {},
     "output": {
       "app": {
         "title": "App",
@@ -20,6 +17,11 @@
         "title": "Express",
         "type": "function"
       }
+    }
+  },
+  "dependencies": {
+    "npm": {
+      "express": "3.x.x"
     }
   }
 }

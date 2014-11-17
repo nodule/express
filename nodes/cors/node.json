@@ -6,9 +6,6 @@
   "phrases": {
     "active": "CORS is a node.js package for providing a Connect/Express middleware that can be used to enable CORS with various options"
   },
-  "require": {
-    "cors": "2.x.x"
-  },
   "ports": {
     "input": {
       "app": {
@@ -58,6 +55,11 @@
         "default": null
       }
     },
-    "output": { }
+    "output": {}
+  },
+  "dependencies": {
+    "npm": {
+      "cors": "2.x.x"
+    }
   }
 }
