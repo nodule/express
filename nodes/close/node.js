@@ -1,1 +1,3 @@
-input.server.close();
+on.input.server = function() {
+ input.server.close();
+}
