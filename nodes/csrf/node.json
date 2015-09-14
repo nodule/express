@@ -1,7 +1,7 @@
 {
-  "name": "csfr",
+  "name": "csrf",
   "ns": "express",
-  "title": "csfr",
+  "title": "csrf",
   "description": "Express CSRF protection middleware",
   "phrases": {
     "active": "Using Express Cross-site request forgery protection middleware"

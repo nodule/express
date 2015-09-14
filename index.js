@@ -7,7 +7,7 @@ module.exports = {
   cookieParser: require('./cookieParser'),
   cookieSession: require('./cookieSession'),
   cors: require('./cors'),
-  csfr: require('./csfr'),
+  csrf: require('./csrf'),
   delete: require('./delete'),
   directory: require('./directory'),
   error: require('./error'),
