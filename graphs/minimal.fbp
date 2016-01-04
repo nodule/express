@@ -1,0 +1,18 @@
+title: Minimal Server
+ns: http
+name: server
+
+Log(console/log)
+HomePage(express/get)
+App(express/app)
+Send(express/send)
+Listen(express/listen)
+
+'8080' -> @port Listen
+'/'    -> @path HomePage
+
+'HelloWorld!' -> @body Send
+HomePage res  ->   res Send
+
+App app -> app HomePage
+App app -> app Listen
