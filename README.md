@@ -7,6 +7,8 @@ Chiχ Express
 Start minimal example
 ```bash
 
+fbpx install graphs/minimal.fbp
+
 fbpx run graphs/minimal.fbp --verbose
 
 fbpx-server graphs/minimal.fbp -l remote --verbose
@@ -15,6 +17,8 @@ fbpx-server graphs/minimal.fbp -l remote --verbose
 
 Start combine example
 ```bash
+
+fbpx install graphs/combine.fbp
 
 fbpx run graphs/combine.fbp --verbose
 
