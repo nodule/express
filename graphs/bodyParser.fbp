@@ -1,0 +1,54 @@
+title: Run the Express server
+description: Shows the contents of http://example.com on the homepage, a CNN rss feed at /cnn and cpuinfo at /cpuinfo
+ns: express
+name: example2
+
+Log(console/log)
+
+# Requests
+Request(http/request), CNNRss(http/request)
+
+# Json
+Parse(json/parse), Path(json/path), JSONPath(json/path), XML2JSON(xml/2json)
+
+# Express
+Express(express/app), Listen(express/listen)
+
+# Client Request To Get some content to serve
+'http://example.com'                 -> url Request
+'http://rss.cnn.com/rss/edition.rss' -> url CNNRss
+
+# Configure the port to listen on
+'1080'          ->    port Listen
+Express app     ->     app Listen
+
+# Serve /
+'/'              -> path ExampleRoute(express/get)
+Express app      -> app ExampleRoute
+ExampleRoute res ->   res SendExample(express/send)
+Request body     -> ^body SendExample
+
+# Serve /cnn
+'/cnn'           -> path CNNRssRoute(express/get)
+Express app      -> app CNNRssRoute
+CNNRssRoute res  ->   res SendCNN(express/send)
+'/rss/channel/item[..]' -> path JSONPath
+
+# Object creation
+'items' -> path Object(object/set)
+
+'<ul>{{#each items}}<li><a href="{{&link}}">{{title}}</a></li>{{/each}}</ul>' -> body Tpl(template/handlebars)
+
+CNNRss body -> in XML2JSON out -> json JSONPath matches -> in Object
+Object out -> vars Tpl out -> ^body SendCNN
+
+# serve /cpuinfo
+'cat /proc/cpuinfo' -> in CPUInfo(utils/exec) # Piping whatever info
+'/cpuinfo'       ->  path CPUInfoRoute(express/get)
+Express app      ->  app CPUInfoRoute
+CPUInfoRoute res ->   res SendCPUInfo(express/send)
+
+'<pre>##</pre>'  ->      in Replace(string/replace)
+'##'             ->   match Replace
+CPUInfo out   -> replace Replace out -> ^body SendCPUInfo
+
