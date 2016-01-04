@@ -14,7 +14,9 @@
   "dependencies": {
     "body-parser": "^1.10.0",
     "cors": "2.x.x",
-    "express": "latest"
+    "express": "latest",
+    "express-directory": "0.0.2",
+    "express-logger": "0.0.3"
   },
   "devDependencies": {
     "chit": "0.x.x"

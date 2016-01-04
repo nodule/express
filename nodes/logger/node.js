@@ -1,1 +1,1 @@
-output = [input.app, 'use', input.express.logger()]
+output = [input.app, 'use', expressLogger()]

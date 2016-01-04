@@ -39,5 +39,10 @@
       }
     },
     "output": {}
+  },
+  "dependencies": {
+    "npm": {
+      "express-directory": "^0.0.2"
+    }
   }
 }

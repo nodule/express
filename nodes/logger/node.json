@@ -8,6 +8,11 @@
   },
   "ports": {
     "input": {
+      "path": {
+        "type": "string",
+        "title": "Path",
+        "required": "true"
+      },
       "app": {
         "type": "function",
         "title": "App",
@@ -20,5 +25,10 @@
       }
     },
     "output": {}
+  },
+  "dependencies": {
+    "npm": {
+      "express-logger": "^0.0.3"
+    }
   }
 }

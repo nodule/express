@@ -1,4 +1,4 @@
-output = [input.app, 'use', input.express.directory(input.path, {
+output = [input.app, 'use', expressDirectory(input.path, {
   hidden: input.hidden,
   icons: input.icons,
   filter: input.filter
