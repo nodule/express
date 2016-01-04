@@ -1,3 +1,5 @@
 ATTIC
 node_modules
 *.txt
+.idea
+.x.cache
