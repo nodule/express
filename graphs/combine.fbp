@@ -19,7 +19,7 @@ Express(express/app), Listen(express/listen)
 'http://rss.cnn.com/rss/edition.rss' -> url CNNRss
 
 # Configure the port to listen on
-'1080'          ->    port Listen
+'8080'          ->    port Listen
 Express app     ->     app Listen
 
 # Serve /
