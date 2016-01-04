@@ -1,0 +1,27 @@
+title: SockJS Express example
+description: The Express example of SockJS
+ns: express
+name: sockjs
+
+# TODO: stays pending
+
+SockServer(sockjs/createServer)
+InstallHandlers(sockjs/InstallHandlers), Log(console/log)
+App(express/app), Get(express/get), Send(express/send), Listen(express/listen)
+
+'8080'      ->   @port Listen
+'/'         ->   @path Get
+
+# Serve request
+App     app -> app Get
+App     app -> app Listen
+
+# Prepare response
+Get res         ->   res Send
+
+# Stores the html along with the flow
+'./sockjs.html' ~> @body Send
+
+SockServer server ->  server InstallHandlers
+Listen server     ->    http InstallHandlers
+'/echo'           -> @prefix InstallHandlers
