@@ -1,3 +1,3 @@
 output = {
-  server: $.app.listen($.port)
+  server: $.create($.app.listen($.port))
 }

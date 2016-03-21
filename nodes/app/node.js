@@ -1,4 +1,4 @@
 output = {
-  app: express(),
-  express: express
+  app: $.create(express()),
+  express: $.create(express)
 };
