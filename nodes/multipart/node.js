@@ -1,1 +1,1 @@
-output = [input.app, 'use', input.express.multipart()]
+output = [$.app, 'use', $.express.multipart()]

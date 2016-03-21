@@ -1,1 +1,1 @@
-output = [input.app, 'post', input.path]
+output = [$.app, 'post', $.path]

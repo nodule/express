@@ -1,1 +1,1 @@
-output = [input.app, 'use', input.express.compress()]
+output = [$.app, 'use', $.express.compress()]

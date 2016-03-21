@@ -1,1 +1,1 @@
-output = [input.app, 'use', input.express.json()]
+output = [$.app, 'use', $.express.json()]

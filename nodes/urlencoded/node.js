@@ -1,1 +1,1 @@
-output = [input.app, 'use', input.express.urlencoded()]
+output = [$.app, 'use', $.express.urlencoded()]

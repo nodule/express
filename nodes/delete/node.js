@@ -1,1 +1,1 @@
-output = [input.app, 'delete', input.path]
+output = [$.app, 'delete', $.path]

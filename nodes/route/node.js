@@ -1,1 +1,1 @@
-output = [input.app, input.type, input.path]
+output = [$.app, $.type, $.path]

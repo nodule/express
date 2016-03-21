@@ -1,8 +1,8 @@
-output = [input.app, 'use', cors({
-  origin: input.origin || true,
-  methods: input.methods || undefined,
-  allowedHeaders: input.allowedHeaders || undefined,
-  exposedHeaders: input.exposedHeaders || undefined,
-  credentials: input.credentials || undefined,
-  maxAge: input.maxAge || undefined
+output = [$.app, 'use', cors({
+  origin: $.origin || true,
+  methods: $.methods || undefined,
+  allowedHeaders: $.allowedHeaders || undefined,
+  exposedHeaders: $.exposedHeaders || undefined,
+  credentials: $.credentials || undefined,
+  maxAge: $.maxAge || undefined
 })]

@@ -1,1 +1,1 @@
-output = [input.app, 'use', input.express.cookieSession()]
+output = [$.app, 'use', $.express.cookieSession()]

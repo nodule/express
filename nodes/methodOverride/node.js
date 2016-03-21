@@ -1,1 +1,1 @@
-output = [input.app, 'use', input.express.methodOverride()]
+output = [$.app, 'use', $.express.methodOverride()]

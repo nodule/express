@@ -1,1 +1,1 @@
-output = [input.app, 'use', body_parser.json()];
+output = [$.app, 'use', body_parser.json()];

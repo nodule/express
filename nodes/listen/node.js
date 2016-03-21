@@ -1,3 +1,3 @@
 output = {
-  server: input.app.listen(input.port)
+  server: $.app.listen($.port)
 }

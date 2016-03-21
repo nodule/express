@@ -1,1 +1,1 @@
-output = [input.app, 'use', input.express.csrf()]
+output = [$.app, 'use', $.express.csrf()]

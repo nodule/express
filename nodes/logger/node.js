@@ -1,1 +1,1 @@
-output = [input.app, 'use', expressLogger()]
+output = [$.app, 'use', expressLogger()]

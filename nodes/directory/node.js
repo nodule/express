@@ -1,5 +1,5 @@
-output = [input.app, 'use', expressDirectory(input.path, {
-  hidden: input.hidden,
-  icons: input.icons,
-  filter: input.filter
+output = [$.app, 'use', expressDirectory($.path, {
+  hidden: $.hidden,
+  icons: $.icons,
+  filter: $.filter
 })];

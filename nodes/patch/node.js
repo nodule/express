@@ -1,1 +1,1 @@
-output = [input.app, 'patch', input.path]
+output = [$.app, 'patch', $.path]
