@@ -1,3 +1,3 @@
 on.input.res = function() {
-  data.send(input.body)
+  input.res.send(input.body)
 }
