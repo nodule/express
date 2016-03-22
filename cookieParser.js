@@ -21,9 +21,9 @@ module.exports = {
     },
     output: {}
   },
-  fn: function cookieParser(input, output, state, done, cb, on) {
+  fn: function cookieParser(input, $, output, state, done, cb, on) {
     var r = function() {
-      input.app.cookieParser(input.express.cookieParser(), function cookieParserCallback() {
+      $.app.cookieParser($.express.cookieParser(), function cookieParserCallback() {
         cb({});
       });
     }.call(this);

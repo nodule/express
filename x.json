@@ -7,8 +7,11 @@
     "url": "https://github.com/nodule/express.git"
   },
   "dependencies": {
+    "body-parser": "^1.10.0",
+    "cors": "2.x.x",
     "express": "latest",
-    "cors": "2.x.x"
+    "express-directory": "0.0.2",
+    "express-logger": "0.0.3"
   },
   "nodes": [
     {
@@ -42,7 +45,7 @@
       "ns": "express",
       "name": "500",
       "env": "server",
-      "fn": "console.error(input.error.stack);\n//(err, req, res, next){\nconsole.error(err.stack);\ninput.res.send(500, err.stack.toString());\n"
+      "fn": "/*\nconsole.error($.error.stack);\n//(err, req, res, next){\nconsole.error(err.stack);\n$.res.send(500, err.stack.toString());\n*/\n"
     },
     {
       "dependencies": {
@@ -71,7 +74,7 @@
       "ns": "express",
       "name": "app",
       "env": "server",
-      "fn": "output = {\n  app: express(),\n  express: express\n};\n"
+      "fn": "output = {\n  app: $.create(express()),\n  express: $.create(express)\n};\n"
     },
     {
       "dependencies": {
@@ -109,7 +112,7 @@
       "ns": "express",
       "name": "bodyParser",
       "env": "server",
-      "fn": "output = [input.app, 'use', body_parser.json()];\n"
+      "fn": "output = [$.app, 'use', body_parser.json()];\n"
     },
     {
       "ports": {
@@ -131,7 +134,7 @@
       "ns": "express",
       "name": "close",
       "env": "server",
-      "fn": "input.server.close();\n"
+      "fn": "on.input.server = function() {\n $.server.close();\n}\n"
     },
     {
       "ports": {
@@ -157,7 +160,7 @@
       "ns": "express",
       "name": "compress",
       "env": "server",
-      "fn": "output = [input.app, 'use', input.express.compress()]\n"
+      "fn": "output = [$.app, 'use', $.express.compress()]\n"
     },
     {
       "ports": {
@@ -183,7 +186,7 @@
       "ns": "express",
       "name": "cookieParser",
       "env": "server",
-      "fn": "output = [input.app, 'use', input.express.cookieParser()]\n"
+      "fn": "output = [$.app, 'use', $.express.cookieParser()]\n"
     },
     {
       "ports": {
@@ -209,7 +212,7 @@
       "ns": "express",
       "name": "cookieSession",
       "env": "server",
-      "fn": "output = [input.app, 'use', input.express.cookieSession()]\n"
+      "fn": "output = [$.app, 'use', $.express.cookieSession()]\n"
     },
     {
       "dependencies": {
@@ -276,7 +279,7 @@
       "ns": "express",
       "name": "cors",
       "env": "server",
-      "fn": "output = [input.app, 'use', cors({\n  origin: input.origin || true,\n  methods: input.methods || undefined,\n  allowedHeaders: input.allowedHeaders || undefined,\n  exposedHeaders: input.exposedHeaders || undefined,\n  credentials: input.credentials || undefined,\n  maxAge: input.maxAge || undefined\n})]\n"
+      "fn": "output = [$.app, 'use', cors({\n  origin: $.origin || true,\n  methods: $.methods || undefined,\n  allowedHeaders: $.allowedHeaders || undefined,\n  exposedHeaders: $.exposedHeaders || undefined,\n  credentials: $.credentials || undefined,\n  maxAge: $.maxAge || undefined\n})]\n"
     },
     {
       "ports": {
@@ -298,11 +301,11 @@
         "active": "Using Express Cross-site request forgery protection middleware"
       },
       "description": "Express CSRF protection middleware",
-      "title": "csfr",
+      "title": "csrf",
       "ns": "express",
-      "name": "csfr",
+      "name": "csrf",
       "env": "server",
-      "fn": "output = [input.app, 'use', input.express.csrf()]\n"
+      "fn": "output = [$.app, 'use', $.express.csrf()]\n"
     },
     {
       "ports": {
@@ -344,9 +347,14 @@
       "ns": "express",
       "name": "delete",
       "env": "server",
-      "fn": "output = [input.app, 'delete', input.path]\n"
+      "fn": "output = [$.app, 'delete', $.path]\n"
     },
     {
+      "dependencies": {
+        "npm": {
+          "express-directory": "^0.0.2"
+        }
+      },
       "ports": {
         "input": {
           "app": {
@@ -389,7 +397,7 @@
       "ns": "express",
       "name": "directory",
       "env": "server",
-      "fn": "output = [input.app, 'use', input.express.directory(input.path, {\n  hidden: input.hidden,\n  icons: input.icons,\n  filter: input.filter\n})];\n"
+      "fn": "output = [$.app, 'use', expressDirectory($.path, {\n  hidden: $.hidden,\n  icons: $.icons,\n  filter: $.filter\n})];\n"
     },
     {
       "ports": {
@@ -428,7 +436,7 @@
       "ns": "express",
       "name": "error",
       "env": "server",
-      "fn": "output = [input.app, 'use']\n"
+      "fn": "// output = [$.app, 'use']\n"
     },
     {
       "ports": {
@@ -470,7 +478,7 @@
       "ns": "express",
       "name": "get",
       "env": "server",
-      "fn": "output = [input.app, 'get', input.path]\n"
+      "fn": "output = [$.app, 'get', $.path]\n"
     },
     {
       "ports": {
@@ -512,7 +520,7 @@
       "ns": "express",
       "name": "head",
       "env": "server",
-      "fn": "output = [input.app, 'head', input.path]\n"
+      "fn": "output = [$.app, 'head', $.path]\n"
     },
     {
       "ports": {
@@ -538,7 +546,7 @@
       "ns": "express",
       "name": "json",
       "env": "server",
-      "fn": "output = [input.app, 'use', input.express.json()]\n"
+      "fn": "output = [$.app, 'use', $.express.json()]\n"
     },
     {
       "ports": {
@@ -571,11 +579,21 @@
       "ns": "express",
       "name": "listen",
       "env": "server",
-      "fn": "output = {\n  server: input.app.listen(input.port)\n}\n"
+      "fn": "output = {\n  server: $.create($.app.listen($.port))\n}\n"
     },
     {
+      "dependencies": {
+        "npm": {
+          "express-logger": "^0.0.3"
+        }
+      },
       "ports": {
         "input": {
+          "path": {
+            "type": "string",
+            "title": "Path",
+            "required": "true"
+          },
           "app": {
             "type": "function",
             "title": "App",
@@ -597,7 +615,7 @@
       "ns": "express",
       "name": "logger",
       "env": "server",
-      "fn": "output = [input.app, 'use', input.express.logger()]\n"
+      "fn": "output = [$.app, 'use', expressLogger()]\n"
     },
     {
       "ports": {
@@ -623,7 +641,7 @@
       "ns": "express",
       "name": "methodOverride",
       "env": "server",
-      "fn": "output = [input.app, 'use', input.express.methodOverride()]\n"
+      "fn": "output = [$.app, 'use', $.express.methodOverride()]\n"
     },
     {
       "ports": {
@@ -649,7 +667,7 @@
       "ns": "express",
       "name": "multipart",
       "env": "server",
-      "fn": "output = [input.app, 'use', input.express.multipart()]\n"
+      "fn": "output = [$.app, 'use', $.express.multipart()]\n"
     },
     {
       "ports": {
@@ -681,7 +699,7 @@
       "ns": "express",
       "name": "options",
       "env": "server",
-      "fn": "output = [input.app, 'options', input.path]\n"
+      "fn": "output = [$.app, 'options', $.path]\n"
     },
     {
       "ports": {
@@ -723,7 +741,7 @@
       "ns": "express",
       "name": "patch",
       "env": "server",
-      "fn": "output = [input.app, 'patch', input.path]\n"
+      "fn": "output = [$.app, 'patch', $.path]\n"
     },
     {
       "ports": {
@@ -763,7 +781,7 @@
       "ns": "express",
       "name": "post",
       "env": "server",
-      "fn": "output = [input.app, 'post', input.path]\n"
+      "fn": "output = [$.app, 'post', $.path]\n"
     },
     {
       "ports": {
@@ -805,7 +823,7 @@
       "ns": "express",
       "name": "put",
       "env": "server",
-      "fn": "output = [input.app, 'put', input.path]\n"
+      "fn": "output = [$.app, 'put', $.path]\n"
     },
     {
       "ports": {
@@ -855,7 +873,7 @@
       "ns": "express",
       "name": "route",
       "env": "server",
-      "fn": "output = [input.app, input.type, input.path]\n"
+      "fn": "output = [$.app, $.type, $.path]\n"
     },
     {
       "ports": {
@@ -885,7 +903,7 @@
       "ns": "express",
       "name": "send",
       "env": "server",
-      "fn": "on.input.res = function() {\n  data.send(input.body)\n}\n"
+      "fn": "on.input.res = function() {\n  $.res.send($.body)\n}\n"
     },
     {
       "ports": {
@@ -911,7 +929,7 @@
       "ns": "express",
       "name": "urlencoded",
       "env": "server",
-      "fn": "output = [input.app, 'use', input.express.urlencoded()]\n"
+      "fn": "output = [$.app, 'use', $.express.urlencoded()]\n"
     }
   ],
   "twigs": [],

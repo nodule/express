@@ -35,9 +35,9 @@ module.exports = {
       }
     }
   },
-  fn: function post(input, output, state, done, cb, on) {
+  fn: function post(input, $, output, state, done, cb, on) {
     var r = function() {
-      input.app.post(input.path, function postCallback(req, res, next) {
+      $.app.post($.path, function postCallback(req, res, next) {
         cb({
           req: req,
           res: res,

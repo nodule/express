@@ -62,15 +62,15 @@ module.exports = {
       cors: require('cors')
     }
   },
-  fn: function cors(input, output, state, done, cb, on, cors) {
+  fn: function cors(input, $, output, state, done, cb, on, cors) {
     var r = function() {
-      input.app.cors(cors({
-        origin: input.origin || true,
-        methods: input.methods || undefined,
-        allowedHeaders: input.allowedHeaders || undefined,
-        exposedHeaders: input.exposedHeaders || undefined,
-        credentials: input.credentials || undefined,
-        maxAge: input.maxAge || undefined
+      $.app.cors(cors({
+        origin: $.origin || true,
+        methods: $.methods || undefined,
+        allowedHeaders: $.allowedHeaders || undefined,
+        exposedHeaders: $.exposedHeaders || undefined,
+        credentials: $.credentials || undefined,
+        maxAge: $.maxAge || undefined
       }), function corsCallback() {
         cb({});
       });

@@ -21,9 +21,9 @@ module.exports = {
     },
     output: {}
   },
-  fn: function urlencoded(input, output, state, done, cb, on) {
+  fn: function urlencoded(input, $, output, state, done, cb, on) {
     var r = function() {
-      input.app.urlencoded(input.express.urlencoded(), function urlencodedCallback() {
+      $.app.urlencoded($.express.urlencoded(), function urlencodedCallback() {
         cb({});
       });
     }.call(this);

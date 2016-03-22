@@ -1,7 +1,7 @@
 module.exports = {
-  name: "csfr",
+  name: "csrf",
   ns: "express",
-  title: "csfr",
+  title: "csrf",
   description: "Express CSRF protection middleware",
   phrases: {
     active: "Using Express Cross-site request forgery protection middleware"
@@ -21,9 +21,9 @@ module.exports = {
     },
     output: {}
   },
-  fn: function csfr(input, output, state, done, cb, on) {
+  fn: function csrf(input, $, output, state, done, cb, on) {
     var r = function() {
-      input.app.csfr(input.express.csrf(), function csfrCallback() {
+      $.app.csrf($.express.csrf(), function csrfCallback() {
         cb({});
       });
     }.call(this);

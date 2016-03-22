@@ -24,11 +24,11 @@ module.exports = {
       express: require('express')
     }
   },
-  fn: function app(input, output, state, done, cb, on, express) {
+  fn: function app(input, $, output, state, done, cb, on, express) {
     var r = function() {
       output = {
-        app: express(),
-        express: express
+        app: $.create(express()),
+        express: $.create(express)
       };
     }.call(this);
     return {

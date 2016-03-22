@@ -15,7 +15,7 @@ module.exports = {
         required: true,
         fn: function __SERVER__(data, x, source, state, input, output) {
           var r = function() {
-            input.server.close();
+            $.server.close();
           }.call(this);
           return {
             state: state,

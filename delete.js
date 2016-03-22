@@ -37,9 +37,9 @@ module.exports = {
       }
     }
   },
-  fn: function _delete(input, output, state, done, cb, on) {
+  fn: function _delete(input, $, output, state, done, cb, on) {
     var r = function() {
-      input.app.delete(input.path, function deleteCallback(req, res, next) {
+      $.app.delete($.path, function deleteCallback(req, res, next) {
         cb({
           req: req,
           res: res,

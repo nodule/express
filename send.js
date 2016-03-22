@@ -17,7 +17,7 @@ module.exports = {
         readonly: "true",
         fn: function __RES__(data, x, source, state, input, output) {
           var r = function() {
-            data.send(input.body)
+            $.res.send($.body)
           }.call(this);
           return {
             state: state,

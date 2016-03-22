@@ -21,9 +21,9 @@ module.exports = {
     },
     output: {}
   },
-  fn: function methodOverride(input, output, state, done, cb, on) {
+  fn: function methodOverride(input, $, output, state, done, cb, on) {
     var r = function() {
-      input.app.methodOverride(input.express.methodOverride(), function methodOverrideCallback() {
+      $.app.methodOverride($.express.methodOverride(), function methodOverrideCallback() {
         cb({});
       });
     }.call(this);

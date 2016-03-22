@@ -40,12 +40,17 @@ module.exports = {
     },
     output: {}
   },
-  fn: function directory(input, output, state, done, cb, on) {
+  dependencies: {
+    npm: {
+      "express-directory": require('express-directory')
+    }
+  },
+  fn: function directory(input, $, output, state, done, cb, on, express_directory) {
     var r = function() {
-      input.app.directory(input.express.directory(input.path, {
-        hidden: input.hidden,
-        icons: input.icons,
-        filter: input.filter
+      $.app.directory(expressDirectory($.path, {
+        hidden: $.hidden,
+        icons: $.icons,
+        filter: $.filter
       }), function directoryCallback() {
         cb({});
       });

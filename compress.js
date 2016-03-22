@@ -21,9 +21,9 @@ module.exports = {
     },
     output: {}
   },
-  fn: function compress(input, output, state, done, cb, on) {
+  fn: function compress(input, $, output, state, done, cb, on) {
     var r = function() {
-      input.app.compress(input.express.compress(), function compressCallback() {
+      $.app.compress($.express.compress(), function compressCallback() {
         cb({});
       });
     }.call(this);

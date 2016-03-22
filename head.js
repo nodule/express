@@ -37,9 +37,9 @@ module.exports = {
       }
     }
   },
-  fn: function head(input, output, state, done, cb, on) {
+  fn: function head(input, $, output, state, done, cb, on) {
     var r = function() {
-      input.app.head(input.path, function headCallback(req, res, next) {
+      $.app.head($.path, function headCallback(req, res, next) {
         cb({
           req: req,
           res: res,

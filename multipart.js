@@ -21,9 +21,9 @@ module.exports = {
     },
     output: {}
   },
-  fn: function multipart(input, output, state, done, cb, on) {
+  fn: function multipart(input, $, output, state, done, cb, on) {
     var r = function() {
-      input.app.multipart(input.express.multipart(), function multipartCallback() {
+      $.app.multipart($.express.multipart(), function multipartCallback() {
         cb({});
       });
     }.call(this);

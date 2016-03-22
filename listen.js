@@ -28,10 +28,10 @@ module.exports = {
       }
     }
   },
-  fn: function listen(input, output, state, done, cb, on) {
+  fn: function listen(input, $, output, state, done, cb, on) {
     var r = function() {
       output = {
-        server: input.app.listen(input.port)
+        server: $.create($.app.listen($.port))
       }
     }.call(this);
     return {

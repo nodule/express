@@ -34,9 +34,9 @@ module.exports = {
       }
     }
   },
-  fn: function error(input, output, state, done, cb, on) {
+  fn: function error(input, $, output, state, done, cb, on) {
     var r = function() {
-      //  input.app.error(, function errorCallback(error,req,res,next) {cb({error: error, req: req, res: res, next: next});});
+      //  $.app.error(function errorCallback(error,req,res,next) {cb({error: error, req: req, res: res, next: next});});
     }.call(this);
     return {
       output: output,

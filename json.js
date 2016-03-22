@@ -21,9 +21,9 @@ module.exports = {
     },
     output: {}
   },
-  fn: function json(input, output, state, done, cb, on) {
+  fn: function json(input, $, output, state, done, cb, on) {
     var r = function() {
-      input.app.json(input.express.json(), function jsonCallback() {
+      $.app.json($.express.json(), function jsonCallback() {
         cb({});
       });
     }.call(this);

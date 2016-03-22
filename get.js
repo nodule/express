@@ -37,9 +37,9 @@ module.exports = {
       }
     }
   },
-  fn: function get(input, output, state, done, cb, on) {
+  fn: function get(input, $, output, state, done, cb, on) {
     var r = function() {
-      input.app.get(input.path, function getCallback(req, res, next) {
+      $.app.get($.path, function getCallback(req, res, next) {
         cb({
           req: req,
           res: res,

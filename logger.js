@@ -8,6 +8,11 @@ module.exports = {
   },
   ports: {
     input: {
+      path: {
+        type: "string",
+        title: "Path",
+        required: "true"
+      },
       app: {
         type: "function",
         title: "App",
@@ -21,9 +26,14 @@ module.exports = {
     },
     output: {}
   },
-  fn: function logger(input, output, state, done, cb, on) {
+  dependencies: {
+    npm: {
+      "express-logger": require('express-logger')
+    }
+  },
+  fn: function logger(input, $, output, state, done, cb, on, express_logger) {
     var r = function() {
-      input.app.logger(input.express.logger(), function loggerCallback() {
+      $.app.logger(expressLogger(), function loggerCallback() {
         cb({});
       });
     }.call(this);

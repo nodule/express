@@ -27,9 +27,9 @@ module.exports = {
       }
     }
   },
-  fn: function options(input, output, state, done, cb, on) {
+  fn: function options(input, $, output, state, done, cb, on) {
     var r = function() {
-      input.app.options(input.path, function optionsCallback(output) {
+      $.app.options($.path, function optionsCallback(output) {
         cb({
           output: output
         });

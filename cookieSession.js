@@ -21,9 +21,9 @@ module.exports = {
     },
     output: {}
   },
-  fn: function cookieSession(input, output, state, done, cb, on) {
+  fn: function cookieSession(input, $, output, state, done, cb, on) {
     var r = function() {
-      input.app.cookieSession(input.express.cookieSession(), function cookieSessionCallback() {
+      $.app.cookieSession($.express.cookieSession(), function cookieSessionCallback() {
         cb({});
       });
     }.call(this);

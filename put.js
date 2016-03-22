@@ -37,9 +37,9 @@ module.exports = {
       }
     }
   },
-  fn: function put(input, output, state, done, cb, on) {
+  fn: function put(input, $, output, state, done, cb, on) {
     var r = function() {
-      input.app.put(input.path, function putCallback(req, res, next) {
+      $.app.put($.path, function putCallback(req, res, next) {
         cb({
           req: req,
           res: res,

@@ -33,9 +33,9 @@ module.exports = {
       "body-parser": require('body-parser')
     }
   },
-  fn: function bodyParser(input, output, state, done, cb, on, body_parser) {
+  fn: function bodyParser(input, $, output, state, done, cb, on, body_parser) {
     var r = function() {
-      input.app.bodyParser(body_parser.json(), function bodyParserCallback(res, type) {
+      $.app.bodyParser(body_parser.json(), function bodyParserCallback(res, type) {
         cb({
           res: res,
           type: type

@@ -44,9 +44,9 @@ module.exports = {
       }
     }
   },
-  fn: function route(input, output, state, done, cb, on) {
+  fn: function route(input, $, output, state, done, cb, on) {
     var r = function() {
-      input.app.route(input.path, function routeCallback(req, res) {
+      $.app.route($.path, function routeCallback(req, res) {
         cb({
           req: req,
           res: res

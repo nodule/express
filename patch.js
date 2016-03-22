@@ -37,9 +37,9 @@ module.exports = {
       }
     }
   },
-  fn: function patch(input, output, state, done, cb, on) {
+  fn: function patch(input, $, output, state, done, cb, on) {
     var r = function() {
-      input.app.patch(input.path, function patchCallback(req, res, next) {
+      $.app.patch($.path, function patchCallback(req, res, next) {
         cb({
           req: req,
           res: res,
