@@ -397,7 +397,7 @@
       "ns": "express",
       "name": "directory",
       "env": "server",
-      "fn": "output = [$.app, 'use', expressDirectory($.path, {\n  hidden: $.hidden,\n  icons: $.icons,\n  filter: $.filter\n})];\n"
+      "fn": "output = [$.app, 'use', express_directory($.path, {\n  hidden: $.hidden,\n  icons: $.icons,\n  filter: $.filter\n})];\n"
     },
     {
       "ports": {

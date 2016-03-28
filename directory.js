@@ -47,7 +47,7 @@ module.exports = {
   },
   fn: function directory(input, $, output, state, done, cb, on, express_directory) {
     var r = function() {
-      $.app.directory(expressDirectory($.path, {
+      $.app.directory(express_directory($.path, {
         hidden: $.hidden,
         icons: $.icons,
         filter: $.filter
