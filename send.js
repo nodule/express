@@ -15,7 +15,7 @@ module.exports = {
         required: "true",
         async: true,
         readonly: "true",
-        fn: function __RES__(data, x, source, state, input, $, output) {
+        fn: function __RES__(data, source, state, input, $, output) {
           var r = function() {
             $.res.send($.body)
           }.call(this);

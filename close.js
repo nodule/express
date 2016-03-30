@@ -13,7 +13,7 @@ module.exports = {
         title: "HTTP Server",
         readonly: true,
         required: true,
-        fn: function __SERVER__(data, x, source, state, input, $, output) {
+        fn: function __SERVER__(data, source, state, input, $, output) {
           var r = function() {
             $.server.close();
           }.call(this);
