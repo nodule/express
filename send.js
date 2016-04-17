@@ -12,9 +12,9 @@ module.exports = {
       res: {
         type: "Stream",
         title: "Express response object",
-        required: "true",
+        required: true,
         async: true,
-        readonly: "true",
+        readonly: true,
         fn: function __RES__(data, source, state, input, $, output) {
           var r = function() {
             $.res.send($.body)
@@ -29,7 +29,7 @@ module.exports = {
         type: "string",
         format: "html",
         title: "The response body",
-        required: "true"
+        required: true
       }
     },
     output: {}

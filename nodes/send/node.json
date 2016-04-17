@@ -12,15 +12,15 @@
       "res": {
         "type": "Stream",
         "title": "Express response object",
-        "required": "true",
+        "required": true,
         "async": true,
-        "readonly": "true"
+        "readonly": true
       },
       "body": {
         "type": "string",
         "format": "html",
         "title": "The response body",
-        "required": "true"
+        "required": true
       }
     },
     "output": {}

@@ -11,17 +11,17 @@
       "path": {
         "type": "string",
         "title": "Path",
-        "required": "true"
+        "required": true
       },
       "app": {
         "type": "function",
         "title": "App",
-        "readonly": "true"
+        "readonly": true
       },
       "express": {
         "type": "function",
         "title": "Express",
-        "readonly": "true"
+        "readonly": true
       }
     },
     "output": {}
