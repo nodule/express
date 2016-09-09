@@ -15,6 +15,13 @@
   },
   "nodes": [
     {
+      "name": "500",
+      "ns": "express",
+      "title": "500",
+      "description": "500 error",
+      "phrases": {
+        "active": "Sending 500 error message"
+      },
       "ports": {
         "input": {
           "error": {
@@ -37,21 +44,16 @@
         },
         "output": {}
       },
-      "phrases": {
-        "active": "Sending 500 error message"
-      },
-      "description": "500 error",
-      "title": "500",
-      "ns": "express",
-      "name": "500",
       "env": "server",
       "fn": "/*\nconsole.error($.error.stack);\n//(err, req, res, next){\nconsole.error(err.stack);\n$.res.send(500, err.stack.toString());\n*/\n"
     },
     {
-      "dependencies": {
-        "npm": {
-          "express": "3.x.x"
-        }
+      "name": "app",
+      "ns": "express",
+      "title": "App",
+      "description": "express app",
+      "phrases": {
+        "active": "Creating Express app"
       },
       "ports": {
         "input": {},
@@ -66,21 +68,21 @@
           }
         }
       },
-      "phrases": {
-        "active": "Creating Express app"
+      "dependencies": {
+        "npm": {
+          "express": "3.x.x"
+        }
       },
-      "description": "express app",
-      "title": "App",
-      "ns": "express",
-      "name": "app",
       "env": "server",
       "fn": "output = {\n  app: $.create(express()),\n  express: $.create(express)\n};\n"
     },
     {
-      "dependencies": {
-        "npm": {
-          "body-parser": "1.x.x"
-        }
+      "name": "bodyParser",
+      "ns": "express",
+      "title": "Body Parser",
+      "description": "Express Body Parser",
+      "phrases": {
+        "active": "Adding Express Body Parser Middleware"
       },
       "ports": {
         "input": {
@@ -104,17 +106,22 @@
           }
         }
       },
-      "phrases": {
-        "active": "Adding Express Body Parser Middleware"
+      "dependencies": {
+        "npm": {
+          "body-parser": "1.x.x"
+        }
       },
-      "description": "Express Body Parser",
-      "title": "Body Parser",
-      "ns": "express",
-      "name": "bodyParser",
       "env": "server",
       "fn": "output = [$.app, 'use', body_parser.json()];\n"
     },
     {
+      "name": "close",
+      "ns": "express",
+      "title": "Close",
+      "description": "Close server (todo: can close any server connection, not just express)",
+      "phrases": {
+        "active": "Closing server"
+      },
       "ports": {
         "input": {
           "server": {
@@ -126,17 +133,17 @@
         },
         "output": {}
       },
-      "phrases": {
-        "active": "Closing server"
-      },
-      "description": "Close server (todo: can close any server connection, not just express)",
-      "title": "Close",
-      "ns": "express",
-      "name": "close",
       "env": "server",
       "fn": "on.input.server = function() {\n $.server.close();\n}\n"
     },
     {
+      "name": "compress",
+      "ns": "express",
+      "title": "Compress",
+      "description": "Express Compress",
+      "phrases": {
+        "active": "Using Express Compress Middleware"
+      },
       "ports": {
         "input": {
           "app": {
@@ -152,17 +159,17 @@
         },
         "output": {}
       },
-      "phrases": {
-        "active": "Using Express Compress Middleware"
-      },
-      "description": "Express Compress",
-      "title": "Compress",
-      "ns": "express",
-      "name": "compress",
       "env": "server",
       "fn": "output = [$.app, 'use', $.express.compress()]\n"
     },
     {
+      "name": "cookieParser",
+      "ns": "express",
+      "title": "Cookie Parser",
+      "description": "Express Cookie Parser",
+      "phrases": {
+        "active": "Using Express Cookie Parser middleware"
+      },
       "ports": {
         "input": {
           "app": {
@@ -178,17 +185,17 @@
         },
         "output": {}
       },
-      "phrases": {
-        "active": "Using Express Cookie Parser middleware"
-      },
-      "description": "Express Cookie Parser",
-      "title": "Cookie Parser",
-      "ns": "express",
-      "name": "cookieParser",
       "env": "server",
       "fn": "output = [$.app, 'use', $.express.cookieParser()]\n"
     },
     {
+      "name": "cookieSession",
+      "ns": "express",
+      "title": "Cookie Session",
+      "description": "Express Cookie Session",
+      "phrases": {
+        "active": "Using Express Cookie Session middleware"
+      },
       "ports": {
         "input": {
           "app": {
@@ -204,21 +211,16 @@
         },
         "output": {}
       },
-      "phrases": {
-        "active": "Using Express Cookie Session middleware"
-      },
-      "description": "Express Cookie Session",
-      "title": "Cookie Session",
-      "ns": "express",
-      "name": "cookieSession",
       "env": "server",
       "fn": "output = [$.app, 'use', $.express.cookieSession()]\n"
     },
     {
-      "dependencies": {
-        "npm": {
-          "cors": "2.x.x"
-        }
+      "name": "cors",
+      "ns": "express",
+      "title": "CORS",
+      "description": "",
+      "phrases": {
+        "active": "CORS is a node.js package for providing a Connect/Express middleware that can be used to enable CORS with various options"
       },
       "ports": {
         "input": {
@@ -271,17 +273,22 @@
         },
         "output": {}
       },
-      "phrases": {
-        "active": "CORS is a node.js package for providing a Connect/Express middleware that can be used to enable CORS with various options"
+      "dependencies": {
+        "npm": {
+          "cors": "2.x.x"
+        }
       },
-      "description": "",
-      "title": "CORS",
-      "ns": "express",
-      "name": "cors",
       "env": "server",
       "fn": "output = [$.app, 'use', cors({\n  origin: $.origin || true,\n  methods: $.methods || undefined,\n  allowedHeaders: $.allowedHeaders || undefined,\n  exposedHeaders: $.exposedHeaders || undefined,\n  credentials: $.credentials || undefined,\n  maxAge: $.maxAge || undefined\n})]\n"
     },
     {
+      "name": "csrf",
+      "ns": "express",
+      "title": "csrf",
+      "description": "Express CSRF protection middleware",
+      "phrases": {
+        "active": "Using Express Cross-site request forgery protection middleware"
+      },
       "ports": {
         "input": {
           "app": {
@@ -297,17 +304,17 @@
         },
         "output": {}
       },
-      "phrases": {
-        "active": "Using Express Cross-site request forgery protection middleware"
-      },
-      "description": "Express CSRF protection middleware",
-      "title": "csrf",
-      "ns": "express",
-      "name": "csrf",
       "env": "server",
       "fn": "output = [$.app, 'use', $.express.csrf()]\n"
     },
     {
+      "name": "delete",
+      "ns": "express",
+      "title": "DELETE",
+      "description": "express delete",
+      "phrases": {
+        "active": "Creating router path {{input.path}} for delete requests."
+      },
       "ports": {
         "input": {
           "app": {
@@ -339,21 +346,16 @@
           }
         }
       },
-      "phrases": {
-        "active": "Creating router path {{input.path}} for delete requests."
-      },
-      "description": "express delete",
-      "title": "DELETE",
-      "ns": "express",
-      "name": "delete",
       "env": "server",
       "fn": "output = [$.app, 'delete', $.path]\n"
     },
     {
-      "dependencies": {
-        "npm": {
-          "express-directory": "^0.0.2"
-        }
+      "name": "directory",
+      "ns": "express",
+      "title": "Directory",
+      "description": "Express directory serving middleware",
+      "phrases": {
+        "active": "Using Express directory serving middleware"
       },
       "ports": {
         "input": {
@@ -389,17 +391,22 @@
         },
         "output": {}
       },
-      "phrases": {
-        "active": "Using Express directory serving middleware"
+      "dependencies": {
+        "npm": {
+          "express-directory": "^0.0.2"
+        }
       },
-      "description": "Express directory serving middleware",
-      "title": "Directory",
-      "ns": "express",
-      "name": "directory",
       "env": "server",
       "fn": "output = [$.app, 'use', express_directory($.path, {\n  hidden: $.hidden,\n  icons: $.icons,\n  filter: $.filter\n})];\n"
     },
     {
+      "name": "error",
+      "ns": "express",
+      "title": "Error",
+      "description": "express error",
+      "phrases": {
+        "active": "Sending Express error"
+      },
       "ports": {
         "input": {
           "app": {
@@ -428,17 +435,17 @@
           }
         }
       },
-      "phrases": {
-        "active": "Sending Express error"
-      },
-      "description": "express error",
-      "title": "Error",
-      "ns": "express",
-      "name": "error",
       "env": "server",
       "fn": "// output = [$.app, 'use']\n"
     },
     {
+      "name": "get",
+      "ns": "express",
+      "title": "GET",
+      "description": "express get",
+      "phrases": {
+        "active": "Creating router path {{input.path}} for get requests."
+      },
       "ports": {
         "input": {
           "app": {
@@ -470,17 +477,17 @@
           }
         }
       },
-      "phrases": {
-        "active": "Creating router path {{input.path}} for get requests."
-      },
-      "description": "express get",
-      "title": "GET",
-      "ns": "express",
-      "name": "get",
       "env": "server",
       "fn": "output = [$.app, 'get', $.path]\n"
     },
     {
+      "name": "head",
+      "ns": "express",
+      "title": "HEAD",
+      "description": "express head",
+      "phrases": {
+        "active": "Creating router path {{input.path}} for HEAD requests."
+      },
       "ports": {
         "input": {
           "app": {
@@ -512,17 +519,17 @@
           }
         }
       },
-      "phrases": {
-        "active": "Creating router path {{input.path}} for HEAD requests."
-      },
-      "description": "express head",
-      "title": "HEAD",
-      "ns": "express",
-      "name": "head",
       "env": "server",
       "fn": "output = [$.app, 'head', $.path]\n"
     },
     {
+      "name": "json",
+      "ns": "express",
+      "title": "JSON",
+      "description": "Express JSON middleware",
+      "phrases": {
+        "active": "Using Express JSON middleware"
+      },
       "ports": {
         "input": {
           "app": {
@@ -538,17 +545,17 @@
         },
         "output": {}
       },
-      "phrases": {
-        "active": "Using Express JSON middleware"
-      },
-      "description": "Express JSON middleware",
-      "title": "JSON",
-      "ns": "express",
-      "name": "json",
       "env": "server",
       "fn": "output = [$.app, 'use', $.express.json()]\n"
     },
     {
+      "name": "listen",
+      "ns": "express",
+      "title": "Listen",
+      "description": "express listen",
+      "phrases": {
+        "active": "listening on port {{input.port}}, ?address?"
+      },
       "ports": {
         "input": {
           "app": {
@@ -571,21 +578,16 @@
           }
         }
       },
-      "phrases": {
-        "active": "listening on port {{input.port}}, ?address?"
-      },
-      "description": "express listen",
-      "title": "Listen",
-      "ns": "express",
-      "name": "listen",
       "env": "server",
       "fn": "output = {\n  server: $.create($.app.listen($.port))\n}\n"
     },
     {
-      "dependencies": {
-        "npm": {
-          "express-logger": "^0.0.3"
-        }
+      "name": "logger",
+      "ns": "express",
+      "title": "Logger",
+      "description": "Express Logger",
+      "phrases": {
+        "active": "Using Logger middleware"
       },
       "ports": {
         "input": {
@@ -607,17 +609,22 @@
         },
         "output": {}
       },
-      "phrases": {
-        "active": "Using Logger middleware"
+      "dependencies": {
+        "npm": {
+          "express-logger": "^0.0.3"
+        }
       },
-      "description": "Express Logger",
-      "title": "Logger",
-      "ns": "express",
-      "name": "logger",
       "env": "server",
       "fn": "output = [$.app, 'use', expressLogger()]\n"
     },
     {
+      "name": "methodOverride",
+      "ns": "express",
+      "title": "Method Override",
+      "description": "Express Method Override",
+      "phrases": {
+        "active": "Using Method Override Middleware"
+      },
       "ports": {
         "input": {
           "app": {
@@ -633,17 +640,17 @@
         },
         "output": {}
       },
-      "phrases": {
-        "active": "Using Method Override Middleware"
-      },
-      "description": "Express Method Override",
-      "title": "Method Override",
-      "ns": "express",
-      "name": "methodOverride",
       "env": "server",
       "fn": "output = [$.app, 'use', $.express.methodOverride()]\n"
     },
     {
+      "name": "multipart",
+      "ns": "express",
+      "title": "Multipart",
+      "description": "Express multipart",
+      "phrases": {
+        "active": "Using Multipart Middleware"
+      },
       "ports": {
         "input": {
           "app": {
@@ -659,17 +666,17 @@
         },
         "output": {}
       },
-      "phrases": {
-        "active": "Using Multipart Middleware"
-      },
-      "description": "Express multipart",
-      "title": "Multipart",
-      "ns": "express",
-      "name": "multipart",
       "env": "server",
       "fn": "output = [$.app, 'use', $.express.multipart()]\n"
     },
     {
+      "name": "options",
+      "ns": "express",
+      "title": "Post",
+      "description": "express options",
+      "phrases": {
+        "active": "Adding router path {{input.path}} for OPTIONS requests."
+      },
       "ports": {
         "input": {
           "app": {
@@ -691,17 +698,17 @@
           }
         }
       },
-      "phrases": {
-        "active": "Adding router path {{input.path}} for OPTIONS requests."
-      },
-      "description": "express options",
-      "title": "Post",
-      "ns": "express",
-      "name": "options",
       "env": "server",
       "fn": "output = [$.app, 'options', $.path]\n"
     },
     {
+      "name": "patch",
+      "ns": "express",
+      "title": "PATCH",
+      "description": "express patch",
+      "phrases": {
+        "active": "Creating router path {{input.path}} for PATCH requests."
+      },
       "ports": {
         "input": {
           "app": {
@@ -733,17 +740,17 @@
           }
         }
       },
-      "phrases": {
-        "active": "Creating router path {{input.path}} for PATCH requests."
-      },
-      "description": "express patch",
-      "title": "PATCH",
-      "ns": "express",
-      "name": "patch",
       "env": "server",
       "fn": "output = [$.app, 'patch', $.path]\n"
     },
     {
+      "name": "post",
+      "ns": "express",
+      "title": "Post",
+      "description": "express post",
+      "phrases": {
+        "active": "Adding router path {{input.path}} for POST requests."
+      },
       "ports": {
         "input": {
           "app": {
@@ -773,17 +780,17 @@
           }
         }
       },
-      "phrases": {
-        "active": "Adding router path {{input.path}} for POST requests."
-      },
-      "description": "express post",
-      "title": "Post",
-      "ns": "express",
-      "name": "post",
       "env": "server",
       "fn": "output = [$.app, 'post', $.path]\n"
     },
     {
+      "name": "put",
+      "ns": "express",
+      "title": "PUT",
+      "description": "express put",
+      "phrases": {
+        "active": "Creating router path {{input.path}} for put requests."
+      },
       "ports": {
         "input": {
           "app": {
@@ -815,17 +822,17 @@
           }
         }
       },
-      "phrases": {
-        "active": "Creating router path {{input.path}} for put requests."
-      },
-      "description": "express put",
-      "title": "PUT",
-      "ns": "express",
-      "name": "put",
       "env": "server",
       "fn": "output = [$.app, 'put', $.path]\n"
     },
     {
+      "name": "route",
+      "ns": "express",
+      "title": "Router",
+      "description": "express route",
+      "phrases": {
+        "active": "Adding router path {{input.path}} for {{input.type}} requests."
+      },
       "ports": {
         "input": {
           "app": {
@@ -865,17 +872,18 @@
           }
         }
       },
-      "phrases": {
-        "active": "Adding router path {{input.path}} for {{input.type}} requests."
-      },
-      "description": "express route",
-      "title": "Router",
-      "ns": "express",
-      "name": "route",
       "env": "server",
       "fn": "output = [$.app, $.type, $.path]\n"
     },
     {
+      "name": "send",
+      "ns": "express",
+      "title": "Send",
+      "async": true,
+      "description": "express send string",
+      "phrases": {
+        "active": "Sending response body"
+      },
       "ports": {
         "input": {
           "res": {
@@ -894,18 +902,17 @@
         },
         "output": {}
       },
-      "phrases": {
-        "active": "Sending response body"
-      },
-      "description": "express send string",
-      "async": true,
-      "title": "Send",
-      "ns": "express",
-      "name": "send",
       "env": "server",
       "fn": "on.input.res = function() {\n  $.res.send($.body)\n}\n"
     },
     {
+      "name": "urlencoded",
+      "ns": "express",
+      "title": "Urlencoded",
+      "description": "Express urlencoded",
+      "phrases": {
+        "active": "Using urlencoded middleware"
+      },
       "ports": {
         "input": {
           "app": {
@@ -921,17 +928,9 @@
         },
         "output": {}
       },
-      "phrases": {
-        "active": "Using urlencoded middleware"
-      },
-      "description": "Express urlencoded",
-      "title": "Urlencoded",
-      "ns": "express",
-      "name": "urlencoded",
       "env": "server",
       "fn": "output = [$.app, 'use', $.express.urlencoded()]\n"
     }
   ],
-  "twigs": [],
   "env": "server"
 }
